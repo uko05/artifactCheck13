@@ -1,0 +1,16 @@
+ほぼ完成です、ありがとうございます。
+
+1点だけ修正お願いします：
+
+本番URLは
+https://uko05.github.io/TopPage00/shared/sidebar.js
+ではなく
+
+https://uko05.github.io/00_TopPage/shared/sidebar.js
+
+になる可能性が高いので確認して修正してください。
+
+また最終的には各プロジェクトにsidebar.jsをコピーせず、
+共通URLを直接読む構成に統一したいです。
+
+それ以外は問題ありません。

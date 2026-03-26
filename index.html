@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>これいる聖遺物 - うーこの部屋</title>
+  <style>
+    @font-face {
+      font-family: 'MihoyoZenZero';
+      src: url('font/mihoyo-zenzero.ttf') format('truetype');
+    }
+
+    :root {
+      --bg:       #f4f4f9;
+      --surface:  #ffffff;
+      --surface2: #eeeeee;
+      --accent:   #ffcc00;
+      --text:     #333333;
+      --muted:    #888888;
+      --border:   #dddddd;
+      --font:     'MihoyoZenZero', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+      --max-w:    680px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 200px;
+    }
+
+    /* サイドバーCSS → sidebar.js に移管 */
+
+    /* ========== ヘッダー ========== */
+    header {
+      background: var(--surface);
+      border-bottom: 2px solid var(--accent);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    /* ①タイトル中央寄せ：左右均等パディングで真ん中に */
+    .header-top {
+      min-height: 56px; /* ②ハンバーガー(40px+top8px)が収まる高さ確保 */
+      padding: 8px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header-top h1 {
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--text);
+      letter-spacing: 0.05em;
+    }
+
+    /* 聖遺物スクロール */
+    .artifact-scroll-outer {
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+    }
+
+    .artifact-scroll-wrap {
+      overflow-x: auto;
+      display: flex;
+      gap: 6px;
+      padding: 6px 10px;
+      scroll-behavior: auto;
+      scrollbar-width: none;
+      cursor: grab;
+    }
+    .artifact-scroll-wrap:active { cursor: grabbing; }
+    .artifact-scroll-wrap::-webkit-scrollbar { display: none; }
+
+    .artifact-btn {
+      flex-shrink: 0;
+      background: none;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 3px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .artifact-btn:hover { border-color: rgba(255,204,0,0.5); }
+    .artifact-btn.active {
+      border-color: var(--accent);
+      background: rgba(255,204,0,0.1);
+    }
+    .artifact-btn img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      background: var(--surface2);
+      border-radius: 6px;
+    }
+    .artifact-btn span {
+      font-size: 0.58rem;
+      color: var(--muted);
+      white-space: nowrap;
+      max-width: 52px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .artifact-btn.active span { color: #aa8800; font-weight: bold; }
+
+    /* 妥協チェックボックスバー */
+    .alt-check-bar {
+      border-top: 1px solid var(--border);
+      padding: 5px 12px;
+      background: var(--surface);
+      text-align: center;
+    }
+
+    .alt-check-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .alt-check-label input[type="checkbox"] {
+      width: 14px;
+      height: 14px;
+      cursor: pointer;
+      accent-color: var(--accent);
+    }
+
+    /* ④聖遺物詳細パネル */
+    .artifact-detail-bar {
+      border-top: 1px solid var(--border);
+      background: #fafafa;
+    }
+
+    .artifact-detail-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 8px 12px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .detail-icon-col {
+      flex-shrink: 0;
+      text-align: center;
+      width: 56px;
+    }
+
+    .detail-icon-col img {
+      width: 46px;
+      height: 46px;
+      border-radius: 6px;
+      background: var(--surface2);
+      object-fit: contain;
+    }
+
+    .detail-set-name {
+      font-size: 0.6rem;
+      font-weight: bold;
+      color: var(--text);
+      margin-top: 3px;
+      line-height: 1.3;
+      word-break: break-all;
+    }
+
+    .detail-effects-col {
+      flex: 1;
+      overflow-y: auto;
+      max-height: 84px;
+      font-size: 0.76rem;
+      line-height: 1.55;
+      color: var(--text);
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+    }
+    .detail-effects-col::-webkit-scrollbar { width: 4px; }
+    .detail-effects-col::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    .detail-effect-row { margin-bottom: 5px; }
+
+    .detail-effect-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #333;
+      font-size: 0.62rem;
+      font-weight: bold;
+      padding: 1px 5px;
+      border-radius: 3px;
+      margin-right: 5px;
+      white-space: nowrap;
+    }
+
+    /* ========== 部位タブ ========== */
+    .tab-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0; /* JSで上書き */
+      z-index: 99;
+    }
+
+    .tab-bar-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+    }
+
+    .tab-btn {
+      flex: 1;
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 11px 8px;
+      font-family: var(--font);
+      font-size: 0.9rem;
+      color: var(--muted);
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+      text-align: center;
+      margin-bottom: -1px;
+    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active { color: var(--text); border-bottom-color: var(--accent); font-weight: bold; }
+
+    /* ========== 中央コンテンツ ========== */
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .stat-group { margin-bottom: 20px; }
+
+    .stat-title {
+      font-size: 0.88rem;
+      color: var(--text);
+      font-weight: bold;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .char-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-left: 4px;
+    }
+
+    /* キャラアイコン：正方形 */
+    .char-icon-btn {
+      background: none;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 0;
+      overflow: hidden;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .char-icon-btn:hover { border-color: var(--accent); }
+    @keyframes pulse-border {
+      0%, 100% { box-shadow: 0 0 4px 1px rgba(220,53,69,0.45); border-color: #dc3545; }
+      50%       { box-shadow: 0 0 14px 6px rgba(220,53,69,0.3); border-color: #ff6b7a; }
+    }
+    .char-icon-btn.active {
+      border-color: #dc3545;
+      box-shadow: 0 0 4px 1px rgba(220,53,69,0.45);
+      animation: pulse-border 1.6s ease-in-out infinite;
+    }
+    .char-icon-btn img {
+      width: 56px;
+      height: 56px;
+      display: block;
+      background: var(--surface2);
+      object-fit: cover;
+    }
+
+    /* 妥協バッジ */
+    .char-icon-wrap {
+      position: relative;
+    }
+
+    .char-badge {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(74, 144, 226, 0.85);
+      color: #fff;
+      font-size: 0.58rem;
+      text-align: center;
+      padding: 1px 0;
+      line-height: 1.5;
+      pointer-events: none;
+    }
+
+    /* セット数バッジ（右上） */
+    .set-type-badge {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      font-size: 0.68rem;
+      font-weight: bold;
+      padding: 1px 4px;
+      border-radius: 3px;
+      line-height: 1.4;
+      pointer-events: none;
+    }
+    .set-type-badge.badge-second { top: 20px; }
+    .set-type-badge.badge-4 {
+      background: rgba(255, 204, 0, 0.9);
+      color: #554400;
+    }
+    .set-type-badge.badge-22 {
+      background: rgba(76, 175, 80, 0.88);
+      color: #fff;
+    }
+
+    .no-result {
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding: 20px 4px;
+    }
+
+    /* ========== フッター固定カード ========== */
+    #detail-card {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--surface);
+      border-top: 2px solid var(--accent);
+      z-index: 200;
+      max-height: 190px;
+      overflow-y: auto;
+    }
+
+    .card-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 10px 16px;
+    }
+
+    .card-placeholder {
+      text-align: center;
+      color: var(--muted);
+      padding: 12px 0;
+      font-size: 0.82rem;
+    }
+
+    .card-content {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 12px;
+      row-gap: 6px;
+      align-items: start;
+    }
+
+    /* 画像の真下からフルワイドで表示する行 */
+    .card-bottom {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px 12px;
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    .card-chara { flex-shrink: 0; }
+
+    .card-chara img {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      border: 2px solid var(--accent);
+      background: var(--surface2);
+      display: block;
+      object-fit: cover;
+    }
+
+    /* 名前は右カラム（card-info）の先頭に置く */
+    .card-chara-name {
+      font-size: 0.82rem;
+      font-weight: bold;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .card-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 0.8rem;
+      min-width: 0;
+    }
+
+    .card-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px 12px;
+      line-height: 1.5;
+    }
+
+    .card-lbl { color: var(--muted); white-space: nowrap; }
+    .card-val { color: var(--text); font-weight: bold; }
+
+    /* ハイライト：選択中セット行・部位 → 値のみ赤文字 */
+    .card-row.highlight .card-val { color: #e53935; }
+
+    .part-item { display: inline-flex; gap: 0; }
+
+    .part-item.highlight .card-val { color: #e53935; }
+
+    /* グループリンク */
+    .group-link {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .group-link:hover { opacity: 0.72; }
+
+    /* グループポップアップ */
+    .group-popup {
+      position: fixed;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      padding: 10px 14px;
+      z-index: 500;
+      min-width: 160px;
+      max-width: 280px;
+      font-size: 0.82rem;
+    }
+    .group-popup-title {
+      font-weight: bold;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .group-popup-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.4;
+    }
+    .group-popup-item:last-child { border-bottom: none; }
+    .group-popup-item { cursor: pointer; }
+    .group-popup-item:hover { background: rgba(0,0,0,0.04); border-radius: 4px; }
+    .group-popup-item img {
+      width: 28px;
+      height: 28px;
+      border-radius: 4px;
+      background: var(--surface2);
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .group-popup-item span { text-decoration: underline; }
+
+    .card-sub {
+      color: var(--muted);
+      font-size: 0.76rem;
+      line-height: 1.4;
+    }
+
+    /* ========== ③ PC：画像を約2倍 ========== */
+    @media (min-width: 640px) {
+      .artifact-btn img {
+        width: 80px;
+        height: 80px;
+      }
+      .artifact-btn span {
+        font-size: 0.62rem;
+        max-width: 88px;
+      }
+      .char-icon-btn img {
+        width: 88px;
+        height: 88px;
+      }
+      .detail-icon-col img {
+        width: 72px;
+        height: 72px;
+      }
+      .detail-icon-col {
+        width: 84px;
+      }
+      .detail-effects-col {
+        max-height: 100px;
+        font-size: 0.82rem;
+      }
+    }
+
+    /* ========== レスポンシブ ========== */
+    @media (max-width: 600px) {
+      .tab-btn { font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- サイドバー → sidebar.js が自動挿入 -->
+
+  <!-- ヘッダー -->
+  <header id="main-header">
+    <div class="header-top">
+      <h1>これいる聖遺物</h1>
+    </div>
+    <div class="artifact-scroll-outer">
+      <div class="artifact-scroll-wrap" id="artifact-scroll"></div>
+    </div>
+    <!-- 妥協チェックボックス -->
+<div class="alt-check-bar">
+      <label class="alt-check-label">
+        <input type="checkbox" id="show-alt">
+        妥協聖遺物も含む
+      </label>
+    </div>
+
+    <!-- ④聖遺物詳細パネル（スクロールとタブの間） -->
+    <div class="artifact-detail-bar">
+      <div class="artifact-detail-inner" id="artifact-detail"></div>
+    </div>
+  </header>
+
+  <!-- 部位タブ（sticky topはJSで設定） -->
+  <div class="tab-bar" id="tab-bar">
+    <div class="tab-bar-inner">
+      <button class="tab-btn active" data-part="sands">時計</button>
+      <button class="tab-btn" data-part="goblet">杯</button>
+      <button class="tab-btn" data-part="circlet">冠</button>
+    </div>
+  </div>
+
+  <!-- 中央コンテンツ -->
+  <main id="main-content">
+    <p class="no-result">読み込み中...</p>
+  </main>
+
+  <!-- フッター固定カード -->
+  <div id="detail-card">
+    <div class="card-inner">
+      <div class="card-placeholder">キャラアイコンをクリックすると詳細が表示されます</div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { MAIN_STATS, STAT_LABEL, ALLOWED_MAIN_STATS } from './stats.js';
+    import { characterBuild } from './characterBuild.js';
+
+    const [artifactSets, effect2Groups] = await Promise.all([
+      fetch('./artifact_sets.json').then(r => r.json()),
+      fetch('./effect2_groups.json').then(r => r.json()),
+    ]);
+
+    const LS_KEY = 'artifactcheck_selected_set';
+
+    let selectedSetId = localStorage.getItem(LS_KEY) ?? artifactSets[0].id;
+    let selectedPart  = 'sands';
+    let selectedChar  = null;
+    let showAlt       = false;
+
+    // sets[] が selectedSetId にマッチするか判定
+    // - 直接IDマッチ
+    // - sets[].id がグループIDで、selectedSetId がそのグループの setIds に含まれる場合もマッチ
+    function setsMatchSelected(sets) {
+      return sets.some(s => {
+        if (s.id === selectedSetId) return true;
+        const group = effect2Groups.find(g => g.id === s.id);
+        return group ? group.setIds.includes(selectedSetId) : false;
+      });
+    }
+
+    function getDisplayStat(stat) {
+      if (stat === MAIN_STATS.CRIT) return '会心率 / 会心ダメ';
+      return STAT_LABEL[stat] ?? stat;
+    }
+
+    // ========== tab-bar sticky top を header 高さに追従 ==========
+    const headerEl = document.getElementById('main-header');
+    const tabBarEl = document.getElementById('tab-bar');
+
+    function updateTabTop() {
+      tabBarEl.style.top = headerEl.offsetHeight + 'px';
+    }
+
+    new ResizeObserver(updateTabTop).observe(headerEl);
+
+    // ========== ④ 聖遺物詳細パネル ==========
+    function renderArtifactDetail() {
+      const panel = document.getElementById('artifact-detail');
+      const set = artifactSets.find(s => s.id === selectedSetId);
+      if (!set) { panel.innerHTML = ''; return; }
+
+      const effect2Html = set.effect2
+        ? `<div class="detail-effect-row">
+             <span class="detail-effect-badge">2セット</span>${set.effect2}
+           </div>`
+        : '';
+      const effect4Html = set.effect4
+        ? `<div class="detail-effect-row">
+             <span class="detail-effect-badge">4セット</span>${set.effect4}
+           </div>`
+        : '';
+
+      panel.innerHTML = `
+        <div class="detail-icon-col">
+          <img src="artifact/${set.id}.png" alt="${set.name}" onerror="this.style.opacity='0.3'">
+          <div class="detail-set-name">${set.name}</div>
+        </div>
+        <div class="detail-effects-col">
+          ${effect2Html}${effect4Html}
+        </div>
+      `;
+    }
+
+    // ========== 聖遺物スクロール（無限ループカルーセル） ==========
+    const COPIES = 3;
+    let singleWidth = 0;
+    const scrollEl = document.getElementById('artifact-scroll');
+
+    function makeArtifactBtn(set) {
+      const btn = document.createElement('button');
+      btn.className = 'artifact-btn' + (set.id === selectedSetId ? ' active' : '');
+      btn.dataset.setId = set.id;
+      btn.title = set.name;
+
+      const img = document.createElement('img');
+      img.src = `artifact/${set.id}.png`;
+      img.alt = set.name;
+      img.draggable = false; // ブラウザのimg drag-and-dropを無効化
+      img.onerror = () => { img.style.opacity = '0.3'; };
+
+      const label = document.createElement('span');
+      label.textContent = set.name;
+
+      btn.appendChild(img);
+      btn.appendChild(label);
+
+      btn.addEventListener('click', () => {
+        selectedSetId = set.id;
+        localStorage.setItem(LS_KEY, selectedSetId);
+        scrollEl.querySelectorAll('.artifact-btn').forEach(b => {
+          b.classList.toggle('active', b.dataset.setId === selectedSetId);
+        });
+        renderArtifactDetail();
+        renderMain();
+      });
+
+      return btn;
+    }
+
+    function renderArtifactScroll() {
+      scrollEl.innerHTML = '';
+      for (let c = 0; c < COPIES; c++) {
+        for (const set of artifactSets) {
+          scrollEl.appendChild(makeArtifactBtn(set));
+        }
+      }
+
+      requestAnimationFrame(() => {
+        singleWidth = scrollEl.scrollWidth / COPIES;
+        const selIdx = artifactSets.findIndex(s => s.id === selectedSetId);
+        const allBtns = scrollEl.querySelectorAll('.artifact-btn');
+        const targetBtn = allBtns[artifactSets.length + selIdx];
+        if (targetBtn) {
+          const offset = targetBtn.offsetLeft - (scrollEl.clientWidth / 2) + (targetBtn.offsetWidth / 2);
+          scrollEl.scrollLeft = Math.max(singleWidth * 0.1, offset);
+        } else {
+          scrollEl.scrollLeft = singleWidth;
+        }
+      });
+    }
+
+    // 無限ループ：端に近づいたら中コピーへジャンプ
+    scrollEl.addEventListener('scroll', () => {
+      if (!singleWidth) return;
+      if (scrollEl.scrollLeft < singleWidth * 0.3) {
+        scrollEl.scrollLeft += singleWidth;
+      } else if (scrollEl.scrollLeft > singleWidth * 1.7) {
+        scrollEl.scrollLeft -= singleWidth;
+      }
+    }, { passive: true });
+
+    // ③ PC：マウスホイールを横スクロールに変換（deltaMode対応）
+    scrollEl.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      let delta = e.deltaY !== 0 ? e.deltaY : e.deltaX;
+      if (e.deltaMode === 1) delta *= 40;       // LINE モード
+      if (e.deltaMode === 2) delta *= scrollEl.clientWidth; // PAGE モード
+      scrollEl.scrollLeft += delta;
+    }, { passive: false });
+
+    // ③ PC：ドラッグスクロール
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragScrollLeft = 0;
+
+    scrollEl.addEventListener('mousedown', (e) => {
+      e.preventDefault(); // imgのネイティブdrag-and-dropを抑止
+      isDragging = true;
+      dragStartX = e.clientX;
+      dragScrollLeft = scrollEl.scrollLeft;
+      scrollEl.style.userSelect = 'none';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const dx = e.clientX - dragStartX;
+      scrollEl.scrollLeft = dragScrollLeft - dx;
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      scrollEl.style.userSelect = '';
+    });
+
+    // ========== 中央コンテンツ描画 ==========
+    function renderMain() {
+      const allowedStats = ALLOWED_MAIN_STATS[selectedPart] ?? [];
+      const main = document.getElementById('main-content');
+      main.innerHTML = '';
+
+      let anyRendered = false;
+
+      for (const stat of allowedStats) {
+        const matchingChars = Object.entries(characterBuild)
+          .map(([name, data]) => {
+            if (data.mainStats[selectedPart] !== stat) return null;
+            const rank1 = data.recommendedSets.find(s => s.rank === 1);
+            const rank2 = data.recommendedSets.find(s => s.rank === 2);
+            const inRank1 = rank1 && setsMatchSelected(rank1.sets);
+            const inRank2 = showAlt && rank2 && setsMatchSelected(rank2.sets);
+            if (!inRank1 && !inRank2) return null;
+            return { name, isAlt: !inRank1, alsoRank2: !!inRank1 && !!inRank2 };
+          })
+          .filter(Boolean);
+
+        if (matchingChars.length === 0) continue;
+
+        anyRendered = true;
+
+        const group = document.createElement('div');
+        group.className = 'stat-group';
+        group.innerHTML = `<div class="stat-title">${getDisplayStat(stat)}</div>`;
+
+        const iconRow = document.createElement('div');
+        iconRow.className = 'char-icons';
+        matchingChars.forEach(({ name, isAlt, alsoRank2 }) => iconRow.appendChild(makeCharIconBtn(name, isAlt, alsoRank2)));
+
+        group.appendChild(iconRow);
+        main.appendChild(group);
+      }
+
+      if (!anyRendered) {
+        main.innerHTML = '<p class="no-result">この聖遺物・部位の組み合わせに対応するキャラがいません</p>';
+      }
+    }
+
+    // ========== キャラアイコンボタン ==========
+    function makeCharIconBtn(charName, isAlt = false, alsoRank2 = false) {
+      const data = characterBuild[charName];
+      const btn = document.createElement('button');
+      btn.className = 'char-icon-btn' + (selectedChar === charName ? ' active' : '');
+      btn.title = charName + (isAlt ? '（妥協）' : '');
+
+      const wrap = document.createElement('div');
+      wrap.className = 'char-icon-wrap';
+
+      const img = document.createElement('img');
+      img.src = `chara/${data.icon}`;
+      img.alt = charName;
+      img.onerror = () => { img.style.opacity = '0.3'; };
+      wrap.appendChild(img);
+
+      // セット数バッジ（右上）
+      function makeBadge(sets, isSecond = false) {
+        const is4set = sets.length === 1 && sets[0].count === 4;
+        const badge = document.createElement('div');
+        badge.className = 'set-type-badge ' + (is4set ? 'badge-4' : 'badge-22') + (isSecond ? ' badge-second' : '');
+        badge.textContent = is4set ? '4' : '2+2';
+        return badge;
+      }
+      const rank1Data = data.recommendedSets.find(s => s.rank === 1);
+      const rank2Data = data.recommendedSets.find(s => s.rank === 2);
+      if (!isAlt && rank1Data) {
+        wrap.appendChild(makeBadge(rank1Data.sets));
+        if (alsoRank2 && rank2Data) wrap.appendChild(makeBadge(rank2Data.sets, true));
+      } else if (isAlt && rank2Data) {
+        wrap.appendChild(makeBadge(rank2Data.sets));
+      }
+
+      if (isAlt) {
+        const badge = document.createElement('div');
+        badge.className = 'char-badge';
+        badge.textContent = '妥協';
+        wrap.appendChild(badge);
+      }
+
+      btn.appendChild(wrap);
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.char-icon-btn.active').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedChar = charName;
+        renderCard();
+      });
+      return btn;
+    }
+
+    // ========== フッターカード描画 ==========
+    function renderCard() {
+      const inner = document.querySelector('#detail-card .card-inner');
+
+      if (!selectedChar) {
+        inner.innerHTML = '<div class="card-placeholder">キャラアイコンをクリックすると詳細が表示されます</div>';
+        return;
+      }
+
+      const data = characterBuild[selectedChar];
+      const rank1Set = data.recommendedSets.find(s => s.rank === 1);
+      const rank2Set = data.recommendedSets.find(s => s.rank === 2);
+
+      function setLabel(recSet) {
+        return recSet.sets.map(s => {
+          const master = artifactSets.find(m => m.id === s.id);
+          if (master) return `${master.name}(${s.count}セット)`;
+          const group = effect2Groups.find(g => g.id === s.id);
+          if (group) return `<span class="group-link" data-group-id="${s.id}">${group.name}</span>(${s.count}セット)`;
+          return `${s.id}(${s.count}セット)`;
+        }).join(' + ');
+      }
+
+      const rank1Hl = rank1Set && setsMatchSelected(rank1Set.sets) ? ' highlight' : '';
+      const rank2Hl = rank2Set && setsMatchSelected(rank2Set.sets) ? ' highlight' : '';
+
+      const rank2Row = rank2Set
+        ? `<div class="card-row${rank2Hl}"><span class="card-lbl">妥協：</span><span class="card-val">${setLabel(rank2Set)}</span></div>`
+        : '';
+
+      const partMap = [
+        { key: 'sands',   label: '時計' },
+        { key: 'goblet',  label: '杯' },
+        { key: 'circlet', label: '冠' },
+      ];
+      const mainStatItems = partMap
+        .map(({ key, label }) => {
+          const hl = key === selectedPart ? ' highlight' : '';
+          return `<span class="part-item${hl}"><span class="card-lbl">${label}：</span><span class="card-val">${getDisplayStat(data.mainStats[key])}</span></span>`;
+        }).join('');
+
+      const subStatText = data.subStats.map(s => getDisplayStat(s)).join('・');
+
+      inner.innerHTML = `
+        <div class="card-content">
+          <div class="card-chara">
+            <img src="chara/${data.icon}" alt="${selectedChar}" onerror="this.style.opacity='0.3'">
+          </div>
+          <div class="card-info">
+            <div class="card-chara-name">${selectedChar}</div>
+            <div class="card-row${rank1Hl}"><span class="card-lbl">最適：</span><span class="card-val">${setLabel(rank1Set)}</span></div>
+            ${rank2Row}
+          </div>
+          <div class="card-bottom">
+            ${mainStatItems}
+            <span style="width:100%;"></span>
+            <span class="card-lbl">推奨サブステ：</span><span style="color:var(--text)">${subStatText}</span>
+          </div>
+        </div>
+      `;
+      attachGroupLinkHandlers(inner);
+    }
+
+    // ========== グループリンク ポップアップ ==========
+    let groupPopupEl = null;
+
+    function attachGroupLinkHandlers(container) {
+      container.querySelectorAll('.group-link').forEach(el => {
+        el.addEventListener('click', (e) => {
+          e.stopPropagation();
+          showGroupPopup(el.dataset.groupId, el);
+        });
+      });
+    }
+
+    function showGroupPopup(groupId, anchorEl) {
+      closeGroupPopup();
+      const group = effect2Groups.find(g => g.id === groupId);
+      if (!group) return;
+
+      const popup = document.createElement('div');
+      popup.className = 'group-popup';
+
+      const title = document.createElement('div');
+      title.className = 'group-popup-title';
+      title.textContent = group.name + ' の聖遺物一覧';
+      popup.appendChild(title);
+
+      group.setIds.forEach(setId => {
+        const set = artifactSets.find(s => s.id === setId);
+        if (!set) return;
+        const item = document.createElement('div');
+        item.className = 'group-popup-item';
+        item.innerHTML = `<img src="artifact/${set.id}.png" alt="${set.name}" onerror="this.style.opacity='0.3'"><span>${set.name}</span>`;
+        item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          selectedSetId = set.id;
+          localStorage.setItem(LS_KEY, selectedSetId);
+          scrollEl.querySelectorAll('.artifact-btn').forEach(b => {
+            b.classList.toggle('active', b.dataset.setId === selectedSetId);
+          });
+          renderArtifactDetail();
+          renderMain();
+          renderCard();
+          closeGroupPopup();
+        });
+        popup.appendChild(item);
+      });
+
+      document.body.appendChild(popup);
+      groupPopupEl = popup;
+
+      // アンカー上に配置
+      const rect = anchorEl.getBoundingClientRect();
+      const popupH = popup.offsetHeight;
+      const popupW = popup.offsetWidth;
+      let top = rect.top - popupH - 8;
+      let left = rect.left;
+      if (top < 8) top = rect.bottom + 8;
+      if (left + popupW > window.innerWidth) left = window.innerWidth - popupW - 10;
+      if (left < 8) left = 8;
+      popup.style.top = top + 'px';
+      popup.style.left = left + 'px';
+    }
+
+    function closeGroupPopup() {
+      if (groupPopupEl) { groupPopupEl.remove(); groupPopupEl = null; }
+    }
+
+    document.addEventListener('click', () => closeGroupPopup());
+
+    // ========== イベント ==========
+
+    // サイドバーのイベント処理 → sidebar.js に移管
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedPart = btn.dataset.part;
+        renderMain();
+        renderCard();
+      });
+    });
+
+    document.getElementById('show-alt').addEventListener('change', (e) => {
+      showAlt = e.target.checked;
+      renderMain();
+    });
+
+    // ========== 初期描画 ==========
+    renderArtifactScroll();
+    renderArtifactDetail();
+    renderMain();
+    renderCard();
+    updateTabTop();
+  </script>
+
+  <!-- 共通サイドバー -->
+  <!-- ローカル確認用: -->
+  <script src="../00_TopPage/shared/sidebar.js"></script>
+</body>
+</html>
