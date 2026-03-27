@@ -2,20 +2,20 @@ import { MAIN_STATS, PARTS } from "./stats.js";
 
 export const characterBuild = {
 
-  "夢見月瑞希": {
-    icon: "mizuki.png",
+  "イルーガ": {
+    icon: "YunJin.png",
 
     recommendedSets: [
       {
         rank: 1,
         sets: [
-          { id: "viridescent", count: 4 }
+          { id: "Silken_Moon_Serenade", count: 4 }
         ]
       },
       {
         rank: 2,
         sets: [
-          { id: "anemo15", count: 2 },
+          { id: "em80", count: 2 },
           { id: "em80", count: 2 }
         ]
       }
@@ -28,9 +28,237 @@ export const characterBuild = {
     },
 
     subStats: [
+      MAIN_STATS.EM,
+      MAIN_STATS.DEF_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "茲白": {
+    icon: "YunJin.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "Night_of_the_Sky_Unveiling", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "husk", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.DEF_PCT,
+      goblet: MAIN_STATS.DEF_PCT,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
       MAIN_STATS.CRIT_RATE,
       MAIN_STATS.CRIT_DMG,
-      MAIN_STATS.EM,
+      MAIN_STATS.DEF_PCT,
+      MAIN_STATS.EM
+    ]
+  },
+  
+  "鍾離": {
+    icon: "YunJin.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "millelith", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "hp20", count: 2 },
+          { id: "hp20", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HP_PCT,
+      circlet: MAIN_STATS.HP_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "カチーナ": {
+    icon: "YunJin.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "cinder_city", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "obsidian_codex", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.DEF_PCT,
+      goblet: MAIN_STATS.GEO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.DEF_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "ゴロー": {
+    icon: "YunJin.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "husk", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "def30", count: 2 },
+          { id: "er20", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.DEF_PCT,
+      goblet: MAIN_STATS.DEF_PCT,
+      circlet: MAIN_STATS.DEF_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.DEF_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "雲菫": {
+    icon: "YunJin.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "husk", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "def30", count: 2 },
+          { id: "er20", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.DEF_PCT,
+      goblet: MAIN_STATS.DEF_PCT,
+      circlet: MAIN_STATS.DEF_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.DEF_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "凝光": {
+    icon: "Ningguang.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "atk18", count: 2 },
+          { id: "geo15", count: 2 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "atk18", count: 2 },
+          { id: "atk18", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.GEO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "ノエル": {
+    icon: "Noelle.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "husk", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "gladiator", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.DEF_PCT,
+      goblet: MAIN_STATS.GEO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.DEF_PCT,
       MAIN_STATS.ER
     ]
   },
