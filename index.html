@@ -744,7 +744,7 @@
             const inRank1 = rank1 && setsMatchSelected(rank1.sets);
             const inRank2 = showAlt && rank2 && setsMatchSelected(rank2.sets);
             if (!inRank1 && !inRank2) return null;
-            return { name, isAlt: !inRank1, alsoRank2: !!inRank1 && !!inRank2 };
+            return { name, isAlt: !inRank1 && !!rank2, alsoRank2: !!inRank1 && !!inRank2 };
           })
           .filter(Boolean);
 

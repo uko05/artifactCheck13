@@ -2,8 +2,736 @@ import { MAIN_STATS, PARTS } from "./stats.js";
 
 export const characterBuild = {
 
+  "ファルカ": {
+    icon: "faruka.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "A_Day_Carved_From_Rising_Winds", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ATK_PCT,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT
+    ]
+  },
+  
+  "ネフェル": {
+    icon: "neferu.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "Night_of_the_Sky_Unveiling", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.EM,
+      goblet: MAIN_STATS.EM,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ER,
+      MAIN_STATS.EM
+    ]
+  },
+  
+  "宵宮": {
+    icon: "Yoimiya.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "shimenawa", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.PYRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.EM
+    ]
+  },
+  
+  "リネ": {
+    icon: "Lyney.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "marechaussee", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.PYRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.EM
+    ]
+  },
+  
+  "神里綾人": {
+    icon: "KamisatoAyato.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "echoes", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "gladiator", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.HYDRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "シグウィン": {
+    icon: "Sigewinne.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "song_of_days_past", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "hp20", count: 2 },
+          { id: "hp20", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HP_PCT,
+      circlet: MAIN_STATS.HP_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.HP_PCT
+    ]
+  },
+  
+  "ムアラニ": {
+    icon: "Mualani.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "obsidian_codex", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HYDRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.EM
+    ]
+  },
+  
+  "アルハイゼン": {
+    icon: "Alhaitham.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "gilded_dreams", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.EM,
+      goblet: MAIN_STATS.DENDRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.EM
+    ]
+  },
+  
+  "白朮": {
+    icon: "Baizhu.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "deepwood", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "hp20", count: 2 },
+          { id: "hp20", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HP_PCT,
+      circlet: MAIN_STATS.HP_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "キィニチ": {
+    icon: "Kinich.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "obsidian_codex", count: 4 }
+        ]
+      },
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.DENDRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "ラウマ": {
+    icon: "rauma.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "Silken_Moon_Serenade", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "deepwood", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.EM,
+      goblet: MAIN_STATS.EM,
+      circlet: MAIN_STATS.EM
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.EM,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "セノ": {
+    icon: "Cyno.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "gilded_dreams", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "thundering_fury", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.EM,
+      goblet: MAIN_STATS.ELECTRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.EM,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "クロリンデ": {
+    icon: "Clorinde.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "harmonic_whimsy", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ELECTRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "イネファ": {
+    icon: "inefa.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "Silken_Moon_Serenade", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "gilded_dreams", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ATK_PCT,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.EM
+    ]
+  },
+  
+  "リオセスリ": {
+    icon: "Wriothesley.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "marechaussee", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ANEMO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT
+    ]
+  },
+  
+  "エスコフィエ": {
+    icon: "esuko.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "golden_troupe", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.CRYO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "スカーク": {
+    icon: "skaku.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "Finale_of_the_Deep_Galleries", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.CRYO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT
+    ]
+  },
+  
+  "魈": {
+    icon: "Xiao.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "vermillion", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "atk18", count: 2 },
+          { id: "anemo15", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ANEMO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "放浪者": {
+    icon: "Scaramouche.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "desert_pavilion", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ANEMO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "閑雲": {
+    icon: "Xianyun.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "viridescent", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "song_of_days_past", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ATK_PCT,
+      circlet: MAIN_STATS.ATK_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "チャスカ": {
+    icon: "Chasca.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "obsidian_codex", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ATK_PCT,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT
+    ]
+  },
+  
+  "アルベド": {
+    icon: "Albedo.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "husk", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "golden_troupe", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.DEF_PCT,
+      goblet: MAIN_STATS.GEO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "荒瀧一斗": {
+    icon: "AratakiItto.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "husk", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.DEF_PCT,
+      goblet: MAIN_STATS.GEO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.DEF_PCT
+    ]
+  },
+  
+  "ナヴィア": {
+    icon: "Navia.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "nighttime_whispers", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.GEO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "千織": {
+    icon: "Chiori.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "golden_troupe", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "husk", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.DEF_PCT,
+      goblet: MAIN_STATS.GEO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.DEF_PCT
+    ]
+  },
+  
+  "シロネン": {
+    icon: "sironen.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "cinder_city", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.DEF_PCT,
+      goblet: MAIN_STATS.DEF_PCT,
+      circlet: MAIN_STATS.DEF_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.DEF_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
   "イルーガ": {
-    icon: "YunJin.png",
+    icon: "iruga.png",
 
     recommendedSets: [
       {
@@ -35,7 +763,7 @@ export const characterBuild = {
   },
   
   "茲白": {
-    icon: "YunJin.png",
+    icon: "shihaku.png",
 
     recommendedSets: [
       {
@@ -67,7 +795,7 @@ export const characterBuild = {
   },
   
   "鍾離": {
-    icon: "YunJin.png",
+    icon: "Zhongli.png",
 
     recommendedSets: [
       {
@@ -100,7 +828,7 @@ export const characterBuild = {
   },
   
   "カチーナ": {
-    icon: "YunJin.png",
+    icon: "Kachina.png",
 
     recommendedSets: [
       {
@@ -132,7 +860,7 @@ export const characterBuild = {
   },
   
   "ゴロー": {
-    icon: "YunJin.png",
+    icon: "Gorou.png",
 
     recommendedSets: [
       {
@@ -1683,7 +2411,7 @@ export const characterBuild = {
   },
   
   "ガイア": {
-    icon: "kaeya.png",
+    icon: "Kaeya.png",
 
     recommendedSets: [
       {
