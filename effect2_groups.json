@@ -21,6 +21,23 @@
     ]
   },
   {
+    "id": "em80",
+    "name": "熟知+80",
+    "setIds": [
+      "paradise_lost",
+      "gilded_dreams",
+      "wanderers_troupe"
+    ]
+  },
+  {
+    "id": "er20",
+    "name": "チャージ効率+20%",
+    "setIds": [
+      "emblem",
+      "Silken_Moon_Serenade"
+    ]
+  },
+  {
     "id": "hp20",
     "name": "HP+20%",
     "setIds": [
@@ -73,15 +90,6 @@
     ]
   },
   {
-    "id": "em80",
-    "name": "熟知+80",
-    "setIds": [
-      "paradise_lost",
-      "gilded_dreams",
-      "wanderers_troupe"
-    ]
-  },
-  {
     "id": "anemo15",
     "name": "風元素+15%",
     "setIds": [
@@ -94,14 +102,6 @@
     "name": "草元素+15%",
     "setIds": [
       "deepwood"
-    ]
-  },
-  {
-    "id": "er20",
-    "name": "チャージ効率+20%",
-    "setIds": [
-      "emblem",
-      "Silken_Moon_Serenade"
     ]
   },
   {

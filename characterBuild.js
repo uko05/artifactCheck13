@@ -2,6 +2,1617 @@ import { MAIN_STATS, PARTS } from "./stats.js";
 
 export const characterBuild = {
 
+  "夢見月瑞希": {
+    icon: "mizuki.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "viridescent", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "anemo15", count: 2 },
+          { id: "em80", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.EM,
+      goblet: MAIN_STATS.EM,
+      circlet: MAIN_STATS.EM
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.EM,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "楓原万葉": {
+    icon: "KazuhaKaedehara.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "viridescent", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "anemo15", count: 2 },
+          { id: "em80", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.EM,
+      goblet: MAIN_STATS.EM,
+      circlet: MAIN_STATS.EM
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.EM,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "ウェンティ": {
+    icon: "Venti.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "viridescent", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "A_Day_Carved_From_Rising_Winds", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ANEMO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "ジン": {
+    icon: "Jean.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "viridescent", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "anemo15", count: 2 },
+          { id: "atk18", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ATK_PCT,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "ヤフォダ": {
+    icon: "yafoda.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "viridescent", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "Silken_Moon_Serenade", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ER,
+      goblet: MAIN_STATS.ATK_PCT,
+      circlet: MAIN_STATS.HEAL_BONUS
+    },
+
+    subStats: [
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.EM,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "イファ": {
+    icon: "ifa.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "viridescent", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "obsidian_codex", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.EM,
+      goblet: MAIN_STATS.EM,
+      circlet: MAIN_STATS.EM
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.EM,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "藍硯": {
+    icon: "ranyan.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "viridescent", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "atk18", count: 2 },
+          { id: "em80", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ATK_PCT,
+      circlet: MAIN_STATS.ATK_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+ 
+  "リネット": {
+    icon: "Lynette.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "viridescent", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "marechaussee", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ANEMO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "ファルザン": {
+    icon: "Faruzan.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "emblem", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "millelith", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ER,
+      goblet: MAIN_STATS.ANEMO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "鹿野院平蔵": {
+    icon: "Heizou.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "viridescent", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "anemo15", count: 2 },
+          { id: "atk18", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ANEMO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+   
+  "スクロース": {
+    icon: "Sucrose.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "viridescent", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "anemo15", count: 2 },
+          { id: "em80", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.EM,
+      goblet: MAIN_STATS.EM,
+      circlet: MAIN_STATS.EM
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.EM,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "早柚": {
+    icon: "Sayu.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "viridescent", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "atk18", count: 2 },
+          { id: "em80", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ATK_PCT,
+      circlet: MAIN_STATS.HEAL_BONUS
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "カーヴェ": {
+    icon: "Kaveh.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "paradise_lost", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "deepwood", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.EM,
+      goblet: MAIN_STATS.DENDRO_DMG,
+      circlet: MAIN_STATS.EM
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.EM,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "綺良々": {
+    icon: "Kirara.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "hp20", count: 2 },
+          { id: "hp20", count: 2 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "deepwood", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HP_PCT,
+      circlet: MAIN_STATS.HP_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.HP_PCT
+    ]
+  },
+  
+  "ヨォーヨ": {
+    icon: "Yaoyao.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "deepwood", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "millelith", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HP_PCT,
+      circlet: MAIN_STATS.HEAL_BONUS
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "ティナリ": {
+    icon: "Tighnari.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "wanderers_troupe", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "gilded_dreams", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.EM,
+      goblet: MAIN_STATS.DENDRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.EM,
+      MAIN_STATS.ATK_PCT
+    ]
+  },
+  
+  "ナヒーダ": {
+    icon: "Nahida.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "deepwood", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "gilded_dreams", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.EM,
+      goblet: MAIN_STATS.EM,
+      circlet: MAIN_STATS.EM
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.EM,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "エミリエ": {
+    icon: "Emilie.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "unfinished_reverie", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "deepwood", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.DENDRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "コレイ": {
+    icon: "Collei.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "deepwood", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "gilded_dreams", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.DENDRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.EM,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "キャンディス": {
+    icon: "Candace.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "hp20", count: 2 },
+          { id: "er20", count: 2 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "emblem", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HP_PCT,
+      circlet: MAIN_STATS.HP_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "ダリア": {
+    icon: "daria.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "noblesse", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "hp20", count: 2 },
+          { id: "hp20", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HP_PCT,
+      circlet: MAIN_STATS.HP_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "バーバラ": {
+    icon: "barbara.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "maiden_beloved", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "ocean_clam", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HP_PCT,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "行秋": {
+    icon: "Xingqiu.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "emblem", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "burst20", count: 2 },
+          { id: "hydro15", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.HYDRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "モナ": {
+    icon: "Mona.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "noblesse", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "emblem", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ER,
+      goblet: MAIN_STATS.HYDRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "アイノ": {
+    icon: "aino.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "Silken_Moon_Serenade", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "em80", count: 2 },
+          { id: "er20", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.EM,
+      goblet: MAIN_STATS.HYDRO_DMG,
+      circlet: MAIN_STATS.CRIT_RATE
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.EM,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "珊瑚宮心海": {
+    icon: "Kokomi.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "ocean_clam", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "millelith", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HP_PCT,
+      circlet: MAIN_STATS.HEAL_BONUS
+    },
+
+    subStats: [
+      MAIN_STATS.EM,
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "夜蘭": {
+    icon: "Yelan.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "emblem", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "hp20", count: 2 },
+          { id: "heart_of_depth", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HYDRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "ニィロウ": {
+    icon: "Nilou.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "hp20", count: 2 },
+          { id: "hp20", count: 2 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "hp20", count: 2 },
+          { id: "em80", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HP_PCT,
+      circlet: MAIN_STATS.HP_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.EM
+    ]
+  },
+  
+  "ヌヴィレット": {
+    icon: "Neuvillette.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "marechaussee", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "wanderers_troupe", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HYDRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "コロンビーナ": {
+    icon: "shojo.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "aubade_of_morningstar_and_moon", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "Silken_Moon_Serenade", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HP_PCT,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "フリーナ": {
+    icon: "Furina.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "golden_troupe", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "millelith", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HP_PCT,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "シトラリ": {
+    icon: "sitorari.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "cinder_city", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "millelith", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.EM,
+      goblet: MAIN_STATS.EM,
+      circlet: MAIN_STATS.EM
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.EM,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "申鶴": {
+    icon: "Shenhe.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "atk18", count: 2 },
+          { id: "atk18", count: 2 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "noblesse", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ATK_PCT,
+      circlet: MAIN_STATS.ATK_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "エウルア": {
+    icon: "Eula.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "pale_flame", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "phys25", count: 2 },
+          { id: "phys25", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.PHYSICAL_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "甘雨": {
+    icon: "Ganyu.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "wanderers_troupe", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "blizzard_strayer", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.CRYO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT
+    ]
+  },
+  
+  "七七": {
+    icon: "Qiqi.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "ocean_clam", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "maiden_beloved", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ATK_PCT,
+      circlet: MAIN_STATS.HEAL_BONUS
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "神里綾華": {
+    icon: "AyakaKamisato.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "blizzard_strayer", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "cryo15", count: 2 },
+          { id: "atk18", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.CRYO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "シャルロット": {
+    icon: "Charlotte.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "atk18", count: 2 },
+          { id: "er20", count: 2 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "noblesse", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ER,
+      goblet: MAIN_STATS.ATK_PCT,
+      circlet: MAIN_STATS.HEAL_BONUS
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "レイラ": {
+    icon: "Layla.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "millelith", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "hp20", count: 2 },
+          { id: "hp20", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HP_PCT,
+      circlet: MAIN_STATS.HP_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "ディオナ": {
+    icon: "Diona.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "noblesse", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "maiden_beloved", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HP_PCT,
+      circlet: MAIN_STATS.HP_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "重雲": {
+    icon: "Chongyun.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "blizzard_strayer", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "noblesse", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.CRYO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "アーロイ": {
+    icon: "aroi.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "blizzard_strayer", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "cryo15", count: 2 },
+          { id: "atk18", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.CRYO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "フレミネ": {
+    icon: "Freminet.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "pale_flame", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "blizzard_strayer", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.PHYSICAL_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "ミカ": {
+    icon: "Mika.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "noblesse", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "hp20", count: 2 },
+          { id: "er20", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HP_PCT,
+      circlet: MAIN_STATS.HEAL_BONUS
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "ロサリア": {
+    icon: "rosaria.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "noblesse", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "emblem", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.CRYO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "ガイア": {
+    icon: "kaeya.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "blizzard_strayer", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "emblem", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.CRYO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "ドゥリン": {
+    icon: "dorin.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "noblesse", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "emblem", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.PYRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "マーヴィカ": {
+    icon: "Mavuika.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "obsidian_codex", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "cinder_city", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.PYRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.EM
+    ]
+  },
+  
+  "アルレッキーノ": {
+    icon: "Arlecchino.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "harmonic_whimsy", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "gladiator", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.PYRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT
+    ]
+  },
+  
+  "ディシア": {
+    icon: "Dehya.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "vourukasha", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "emblem", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.PYRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.EM
+    ]
+  },
+  
   "胡桃": {
     icon: "Hutao.png",
 
@@ -47,7 +1658,7 @@ export const characterBuild = {
       {
         rank: 2,
         sets: [
-          { id: "crimson_witch", count: 2 },
+          { id: "pyro15", count: 2 },
           { id: "atk18", count: 2 }
         ]
       }
@@ -770,38 +2381,6 @@ export const characterBuild = {
       MAIN_STATS.CRIT_RATE,
       MAIN_STATS.CRIT_DMG,
       MAIN_STATS.EM,
-      MAIN_STATS.ER
-    ]
-  },
-  
-  "ガイア": {
-    icon: "kaeya.png",
-
-    recommendedSets: [
-      {
-        rank: 1,
-        sets: [
-          { id: "blizzard_strayer", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "emblem", count: 4 }
-        ]
-      }
-    ],
-
-    mainStats: {
-      sands: MAIN_STATS.ATK_PCT,
-      goblet: MAIN_STATS.CRYO_DMG,
-      circlet: MAIN_STATS.CRIT
-    },
-
-    subStats: [
-      MAIN_STATS.CRIT_RATE,
-      MAIN_STATS.CRIT_DMG,
-      MAIN_STATS.ATK_PCT,
       MAIN_STATS.ER
     ]
   },
