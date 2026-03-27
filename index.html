@@ -415,6 +415,7 @@
 
     .card-lbl { color: var(--muted); white-space: nowrap; }
     .card-val { color: var(--text); font-weight: bold; }
+    .card-val-muted { color: var(--muted); font-weight: normal; font-style: italic; }
 
     /* ハイライト：選択中セット行・部位 → 値のみ赤文字 */
     .card-row.highlight .card-val { color: #e53935; }
@@ -847,7 +848,7 @@
 
       const rank2Row = rank2Set
         ? `<div class="card-row${rank2Hl}"><span class="card-lbl">妥協：</span><span class="card-val">${setLabel(rank2Set)}</span></div>`
-        : '';
+        : `<div class="card-row"><span class="card-lbl">妥協：</span><span class="card-val card-val-muted">使用率10％未満のため記載なし</span></div>`;
 
       const partMap = [
         { key: 'sands',   label: '時計' },

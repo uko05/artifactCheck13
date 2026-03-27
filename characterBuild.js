@@ -739,13 +739,6 @@ export const characterBuild = {
         sets: [
           { id: "Silken_Moon_Serenade", count: 4 }
         ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "em80", count: 2 },
-          { id: "em80", count: 2 }
-        ]
       }
     ],
 
@@ -770,12 +763,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "Night_of_the_Sky_Unveiling", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "husk", count: 4 }
         ]
       }
     ],
@@ -803,13 +790,6 @@ export const characterBuild = {
         sets: [
           { id: "millelith", count: 4 }
         ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "hp20", count: 2 },
-          { id: "hp20", count: 2 }
-        ]
       }
     ],
 
@@ -835,12 +815,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "cinder_city", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "obsidian_codex", count: 4 }
         ]
       }
     ],
@@ -991,6 +965,32 @@ export const characterBuild = {
     ]
   },
   
+  "夢見月瑞希": {
+    icon: "mizuki.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "viridescent", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.EM,
+      goblet: MAIN_STATS.EM,
+      circlet: MAIN_STATS.EM
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.EM,
+      MAIN_STATS.ER
+    ]
+  },
+  
   "楓原万葉": {
     icon: "KazuhaKaedehara.png",
 
@@ -999,13 +999,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "viridescent", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "anemo15", count: 2 },
-          { id: "em80", count: 2 }
         ]
       }
     ],
@@ -1064,13 +1057,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "viridescent", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "anemo15", count: 2 },
-          { id: "atk18", count: 2 }
         ]
       }
     ],
@@ -1160,13 +1146,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "viridescent", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "atk18", count: 2 },
-          { id: "em80", count: 2 }
         ]
       }
     ],
@@ -1291,13 +1270,6 @@ export const characterBuild = {
         sets: [
           { id: "viridescent", count: 4 }
         ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "anemo15", count: 2 },
-          { id: "em80", count: 2 }
-        ]
       }
     ],
 
@@ -1323,13 +1295,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "viridescent", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "atk18", count: 2 },
-          { id: "em80", count: 2 }
         ]
       }
     ],
@@ -1421,12 +1386,6 @@ export const characterBuild = {
         sets: [
           { id: "deepwood", count: 4 }
         ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "millelith", count: 4 }
-        ]
       }
     ],
 
@@ -1485,12 +1444,6 @@ export const characterBuild = {
         sets: [
           { id: "deepwood", count: 4 }
         ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "gilded_dreams", count: 4 }
-        ]
       }
     ],
 
@@ -1548,12 +1501,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "deepwood", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "gilded_dreams", count: 4 }
         ]
       }
     ],
@@ -1614,13 +1561,6 @@ export const characterBuild = {
         sets: [
           { id: "noblesse", count: 4 }
         ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "hp20", count: 2 },
-          { id: "hp20", count: 2 }
-        ]
       }
     ],
 
@@ -1674,13 +1614,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "emblem", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "burst20", count: 2 },
-          { id: "hydro15", count: 2 }
         ]
       }
     ],
@@ -1740,13 +1673,6 @@ export const characterBuild = {
         sets: [
           { id: "Silken_Moon_Serenade", count: 4 }
         ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "em80", count: 2 },
-          { id: "er20", count: 2 }
-        ]
       }
     ],
 
@@ -1804,13 +1730,6 @@ export const characterBuild = {
         sets: [
           { id: "emblem", count: 4 }
         ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "hp20", count: 2 },
-          { id: "heart_of_depth", count: 2 }
-        ]
       }
     ],
 
@@ -1838,13 +1757,6 @@ export const characterBuild = {
           { id: "hp20", count: 2 },
           { id: "hp20", count: 2 }
         ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "hp20", count: 2 },
-          { id: "em80", count: 2 }
-        ]
       }
     ],
 
@@ -1868,12 +1780,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "marechaussee", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "wanderers_troupe", count: 4 }
         ]
       }
     ],
@@ -1933,12 +1839,6 @@ export const characterBuild = {
         sets: [
           { id: "golden_troupe", count: 4 }
         ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "millelith", count: 4 }
-        ]
       }
     ],
 
@@ -1964,12 +1864,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "cinder_city", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "millelith", count: 4 }
         ]
       }
     ],
@@ -2126,13 +2020,6 @@ export const characterBuild = {
         sets: [
           { id: "blizzard_strayer", count: 4 }
         ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "cryo15", count: 2 },
-          { id: "atk18", count: 2 }
-        ]
       }
     ],
 
@@ -2191,13 +2078,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "millelith", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "hp20", count: 2 },
-          { id: "hp20", count: 2 }
         ]
       }
     ],
@@ -2354,13 +2234,6 @@ export const characterBuild = {
         sets: [
           { id: "noblesse", count: 4 }
         ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "hp20", count: 2 },
-          { id: "er20", count: 2 }
-        ]
       }
     ],
 
@@ -2483,12 +2356,6 @@ export const characterBuild = {
         sets: [
           { id: "obsidian_codex", count: 4 }
         ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "cinder_city", count: 4 }
-        ]
       }
     ],
 
@@ -2609,13 +2476,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "crimson_witch", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "pyro15", count: 2 },
-          { id: "atk18", count: 2 }
         ]
       }
     ],
@@ -2739,12 +2599,6 @@ export const characterBuild = {
         sets: [
           { id: "noblesse", count: 4 }
         ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "emblem", count: 4 }
-        ]
       }
     ],
 
@@ -2771,12 +2625,6 @@ export const characterBuild = {
         sets: [
           { id: "emblem", count: 4 }
         ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "crimson_witch", count: 4 }
-        ]
       }
     ],
 
@@ -2802,12 +2650,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "crimson_witch", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "gladiator", count: 4 }
         ]
       }
     ],
@@ -2867,13 +2709,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "Night_of_the_Sky_Unveiling", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "atk18", count: 2 },
-          { id: "em80", count: 2 }
         ]
       }
     ],
@@ -2965,12 +2800,6 @@ export const characterBuild = {
         sets: [
           { id: "emblem", count: 4 }
         ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "paradise_lost", count: 4 }
-        ]
       }
     ],
 
@@ -3028,12 +2857,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "cinder_city", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "noblesse", count: 4 }
         ]
       }
     ],
@@ -3093,12 +2916,6 @@ export const characterBuild = {
         sets: [
           { id: "emblem", count: 4 }
         ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "thundering_fury", count: 4 }
-        ]
       }
     ],
 
@@ -3124,12 +2941,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "cinder_city", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "obsidian_codex", count: 4 }
         ]
       }
     ],
@@ -3157,12 +2968,6 @@ export const characterBuild = {
         sets: [
           { id: "golden_troupe", count: 4 }
         ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "thundering_fury", count: 4 }
-        ]
       }
     ],
 
@@ -3188,12 +2993,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "emblem", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "noblesse", count: 4 }
         ]
       }
     ],
@@ -3254,12 +3053,6 @@ export const characterBuild = {
         sets: [
           { id: "wanderers_troupe", count: 4 }
         ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "gilded_dreams", count: 4 }
-        ]
       }
     ],
 
@@ -3285,12 +3078,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "gladiator", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "pale_flame", count: 4 }
         ]
       }
     ],
