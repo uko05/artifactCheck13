@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(for dir:*)",
-      "Bash(do echo:*)"
+      "Bash(do echo:*)",
+      "Read(//e/20_GitHub/05_Mirishira/**)",
+      "Read(//e/20_GitHub/99_SharedImage/02_Starrail/**)",
+      "Read(//e/20_GitHub/07_StarRailCheck/**)",
+      "Read(//e/20_GitHub/03_TiersList/**)",
+      "Read(//e/20_GitHub/02_TiersList/**)"
     ]
   }
 }

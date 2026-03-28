@@ -1,10 +1,67 @@
-これから他のプロジェクトにも同じようにSharedImageを参照するように修正を行ってもらいます。
-E:\20_GitHub\01_TiersList
+# 修正依頼：ArtifactCheck13 に Google Analytics 4 を追加
 
-キャラ画像は下記のように変更して（もちろん）
-E:\20_GitHub\01_TiersList\chara
-↓
-E:\20_GitHub\99_SharedImage\01_Genshin\chara_icon
+対象サイト：
+`https://uko05.github.io/artifactCheck13/`
 
-Faviconは下記を参照してください
-E:\20_GitHub\99_SharedImage\00_common\favicon_io
+目的：
+「これいる聖遺物」を、他サイトとは別のGoogle Analyticsプロパティで計測したいです。
+基本のページ計測ができて、リアルタイムでアクセス確認できる状態にしてください。
+
+---
+
+## 対応内容
+
+* `artifactCheck13` プロジェクトに Google Analytics 4 を追加
+* 既存の別サイト用GAではなく、このサイト専用の Measurement ID を使用
+* 全ページで確実に読み込まれる `<head>` に埋め込む
+* デプロイ後、GA4のリアルタイムでアクセス確認できる状態にする
+
+---
+
+## 使用する Measurement ID
+
+```text
+G-X5FKJL6K2X
+```
+
+---
+
+## 追加するコード
+
+```html
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X5FKJL6K2X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X5FKJL6K2X');
+</script>
+```
+
+---
+
+## 実装条件
+
+* `index.html` の `<head>` 内に追加すること
+* もし共通テンプレートや共通head読込箇所があるなら、全ページで有効になる場所に追加すること
+* 既存コードを壊さないこと
+* 重複してGAタグを入れないこと
+* 追加後にGitHub Pagesで動作確認すること
+
+---
+
+## 確認項目
+
+* `https://uko05.github.io/artifactCheck13/` を開いたときにGA4へ計測が飛ぶ
+* Google Analytics のリアルタイムでアクセスが見える
+* コンソールエラーが出ていない
+
+---
+
+## 補足
+
+* 今回はまず基本のページ計測だけでOK
+* カスタムイベントやボタンクリック計測は不要
+* 他サイトとは分離した別プロパティとして扱う
