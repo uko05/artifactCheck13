@@ -793,7 +793,7 @@
       wrap.className = 'char-icon-wrap';
 
       const img = document.createElement('img');
-      img.src = `chara/${data.icon}`;
+      img.src = `https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/01_Genshin/chara_icon/${data.icon}`;
       img.alt = charName;
       img.onerror = () => { img.style.opacity = '0.3'; };
       wrap.appendChild(img);
@@ -878,7 +878,7 @@
       inner.innerHTML = `
         <div class="card-content">
           <div class="card-chara">
-            <img src="chara/${data.icon}" alt="${selectedChar}" onerror="this.style.opacity='0.3'">
+            <img src="https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/01_Genshin/chara_icon/${data.icon}" alt="${selectedChar}" onerror="this.style.opacity='0.3'">
           </div>
           <div class="card-info">
             <div class="card-chara-name">${selectedChar}</div>
