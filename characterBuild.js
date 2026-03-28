@@ -892,8 +892,6 @@ export const characterBuild = {
     },
 
     subStats: [
-      MAIN_STATS.CRIT_RATE,
-      MAIN_STATS.CRIT_DMG,
       MAIN_STATS.DEF_PCT,
       MAIN_STATS.ER
     ]
@@ -960,8 +958,7 @@ export const characterBuild = {
     subStats: [
       MAIN_STATS.CRIT_RATE,
       MAIN_STATS.CRIT_DMG,
-      MAIN_STATS.DEF_PCT,
-      MAIN_STATS.ER
+      MAIN_STATS.DEF_PCT
     ]
   },
   
@@ -1064,7 +1061,7 @@ export const characterBuild = {
     mainStats: {
       sands: MAIN_STATS.ATK_PCT,
       goblet: MAIN_STATS.ATK_PCT,
-      circlet: MAIN_STATS.CRIT
+      circlet: MAIN_STATS.CRIT_RATE
     },
 
     subStats: [
@@ -1597,7 +1594,7 @@ export const characterBuild = {
     mainStats: {
       sands: MAIN_STATS.HP_PCT,
       goblet: MAIN_STATS.HP_PCT,
-      circlet: MAIN_STATS.CRIT
+      circlet: MAIN_STATS.HEAL_BONUS
     },
 
     subStats: [
@@ -1793,8 +1790,7 @@ export const characterBuild = {
     subStats: [
       MAIN_STATS.CRIT_RATE,
       MAIN_STATS.CRIT_DMG,
-      MAIN_STATS.HP_PCT,
-      MAIN_STATS.ER
+      MAIN_STATS.HP_PCT
     ]
   },
   
@@ -2432,7 +2428,7 @@ export const characterBuild = {
       MAIN_STATS.CRIT_RATE,
       MAIN_STATS.CRIT_DMG,
       MAIN_STATS.HP_PCT,
-      MAIN_STATS.EM
+      MAIN_STATS.ER
     ]
   },
   
@@ -2749,7 +2745,7 @@ export const characterBuild = {
     mainStats: {
       sands: MAIN_STATS.ATK_PCT,
       goblet: MAIN_STATS.ATK_PCT,
-      circlet: MAIN_STATS.CRIT_DMG
+      circlet: MAIN_STATS.CRIT
     },
 
     subStats: [
@@ -2799,21 +2795,21 @@ export const characterBuild = {
       {
         rank: 1,
         sets: [
-          { id: "emblem", count: 4 }
+          { id: "gilded_dreams", count: 4 }
         ]
       },
       {
         rank: 2,
         sets: [
-          { id: "paradise_lost", count: 4 }
+          { id: "golden_troupe", count: 4 }
         ]
       }
     ],
 
     mainStats: {
-      sands: MAIN_STATS.EM,
-      goblet: MAIN_STATS.EM,
-      circlet: MAIN_STATS.EM
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ELECTRO_DMG,
+      circlet: MAIN_STATS.CRIT
     },
 
     subStats: [
@@ -2837,16 +2833,16 @@ export const characterBuild = {
     ],
 
     mainStats: {
-      sands: MAIN_STATS.EM,
-      goblet: MAIN_STATS.EM,
-      circlet: MAIN_STATS.EM
+      sands: MAIN_STATS.ER,
+      goblet: MAIN_STATS.ELECTRO_DMG,
+      circlet: MAIN_STATS.CRIT
     },
 
     subStats: [
       MAIN_STATS.CRIT_RATE,
       MAIN_STATS.CRIT_DMG,
-      MAIN_STATS.HP_PCT,
-      MAIN_STATS.EM
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
     ]
   },
   
@@ -2857,13 +2853,14 @@ export const characterBuild = {
       {
         rank: 1,
         sets: [
-          { id: "emblem", count: 4 }
+          { id: "thundering_fury", count: 4 }
         ]
       },
       {
         rank: 2,
         sets: [
-          { id: "paradise_lost", count: 4 }
+          { id: "thundering_fury", count: 2 },
+          { id: "atk18", count: 2 }
         ]
       }
     ],
@@ -2915,7 +2912,7 @@ export const characterBuild = {
       {
         rank: 1,
         sets: [
-          { id: "emblem", count: 4 }
+          { id: "gilded_dreams", count: 4 }
         ]
       },
       {
@@ -2962,7 +2959,7 @@ export const characterBuild = {
       MAIN_STATS.CRIT_RATE,
       MAIN_STATS.CRIT_DMG,
       MAIN_STATS.ATK_PCT,
-      MAIN_STATS.EM
+      MAIN_STATS.ER
     ]
   },
   
