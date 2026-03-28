@@ -2701,6 +2701,39 @@ export const characterBuild = {
     ]
   },
   
+  "トーマ": {
+    icon: "Thoma.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "hp20", count: 2 },
+          { id: "er20", count: 2 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "emblem", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HP_PCT,
+      circlet: MAIN_STATS.HP_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
   "フリンズ": {
     icon: "hurinzu.png",
 
