@@ -1,89 +1,10 @@
-# 【修正依頼】画像パスを共通CDN（jsDelivr）に変更
+これから他のプロジェクトにも同じようにSharedImageを参照するように修正を行ってもらいます。
+E:\20_GitHub\01_TiersList
 
-## ■概要
+キャラ画像は下記のように変更して（もちろん）
+E:\20_GitHub\01_TiersList\chara
+↓
+E:\20_GitHub\99_SharedImage\01_Genshin\chara_icon
 
-画像を各リポジトリ内で管理する方式をやめ、
-共通リポジトリ（99_SharedImage）からCDN経由で参照するように変更する。
-
-対象はまず「これいる聖遺物（ArtifactCheck）」。
-
----
-
-## ■変更内容
-
-### 対象フォルダ（ローカル）
-
-```
-E:\20_GitHub\99_SharedImage\01_Genshin\artifact
-```
-
-### CDNベースURL
-
-```
-https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/01_Genshin/artifact/
-```
-
----
-
-## ■変更ルール
-
-### 変更前
-
-```html
-<img src="./artifact/bloodstained.png">
-```
-
-または
-
-```js
-"./artifact/bloodstained.png"
-```
-
----
-
-### 変更後
-
-```html
-<img src="https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/01_Genshin/artifact/bloodstained.png">
-```
-
-または
-
-```js
-"https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/01_Genshin/artifact/bloodstained.png"
-```
-
----
-
-## ■重要条件
-
-* ファイル名はそのまま使用（変更なし）
-* 大文字・小文字は完全一致させる
-* パスはすべてCDNベースURLに置換
-* artifactフォルダ内の画像参照は全て対象
-
----
-
-## ■作業内容
-
-1. 「これいる聖遺物」プロジェクト内の
-   artifact画像参照をすべて検索
-
-2. 相対パス（./artifact/ など）を
-   CDN URLに一括置換
-
-3. 表示確認（画像が正常に出るか）
-
----
-
-## ■補足
-
-* 今後は画像を99_SharedImage側で一元管理する
-* 他プロジェクトも順次同様に移行予定
-
----
-
-## ■ゴール
-
-* 全artifact画像がCDN経由で表示される状態
-* ローカルのartifactフォルダは不要になる状態
+Faviconは下記を参照してください
+E:\20_GitHub\99_SharedImage\00_common\favicon_io
