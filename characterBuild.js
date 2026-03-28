@@ -2859,7 +2859,7 @@ export const characterBuild = {
       {
         rank: 2,
         sets: [
-          { id: "thundering_fury", count: 2 },
+          { id: "electro15", count: 2 },
           { id: "atk18", count: 2 }
         ]
       }

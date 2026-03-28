@@ -1,16 +1,89 @@
-ほぼ完成です、ありがとうございます。
+# 【修正依頼】画像パスを共通CDN（jsDelivr）に変更
 
-1点だけ修正お願いします：
+## ■概要
 
-本番URLは
-https://uko05.github.io/TopPage00/shared/sidebar.js
-ではなく
+画像を各リポジトリ内で管理する方式をやめ、
+共通リポジトリ（99_SharedImage）からCDN経由で参照するように変更する。
 
-https://uko05.github.io/00_TopPage/shared/sidebar.js
+対象はまず「これいる聖遺物（ArtifactCheck）」。
 
-になる可能性が高いので確認して修正してください。
+---
 
-また最終的には各プロジェクトにsidebar.jsをコピーせず、
-共通URLを直接読む構成に統一したいです。
+## ■変更内容
 
-それ以外は問題ありません。
+### 対象フォルダ（ローカル）
+
+```
+E:\20_GitHub\99_SharedImage\01_Genshin\artifact
+```
+
+### CDNベースURL
+
+```
+https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/01_Genshin/artifact/
+```
+
+---
+
+## ■変更ルール
+
+### 変更前
+
+```html
+<img src="./artifact/bloodstained.png">
+```
+
+または
+
+```js
+"./artifact/bloodstained.png"
+```
+
+---
+
+### 変更後
+
+```html
+<img src="https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/01_Genshin/artifact/bloodstained.png">
+```
+
+または
+
+```js
+"https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/01_Genshin/artifact/bloodstained.png"
+```
+
+---
+
+## ■重要条件
+
+* ファイル名はそのまま使用（変更なし）
+* 大文字・小文字は完全一致させる
+* パスはすべてCDNベースURLに置換
+* artifactフォルダ内の画像参照は全て対象
+
+---
+
+## ■作業内容
+
+1. 「これいる聖遺物」プロジェクト内の
+   artifact画像参照をすべて検索
+
+2. 相対パス（./artifact/ など）を
+   CDN URLに一括置換
+
+3. 表示確認（画像が正常に出るか）
+
+---
+
+## ■補足
+
+* 今後は画像を99_SharedImage側で一元管理する
+* 他プロジェクトも順次同様に移行予定
+
+---
+
+## ■ゴール
+
+* 全artifact画像がCDN経由で表示される状態
+* ローカルのartifactフォルダは不要になる状態

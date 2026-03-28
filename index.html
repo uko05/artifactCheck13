@@ -618,7 +618,7 @@
 
       panel.innerHTML = `
         <div class="detail-icon-col">
-          <img src="artifact/${set.id}.png" alt="${set.name}" onerror="this.style.opacity='0.3'">
+          <img src="https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/01_Genshin/artifact/${set.id}.png" alt="${set.name}" onerror="this.style.opacity='0.3'">
           <div class="detail-set-name">${set.name}</div>
         </div>
         <div class="detail-effects-col">
@@ -639,7 +639,7 @@
       btn.title = set.name;
 
       const img = document.createElement('img');
-      img.src = `artifact/${set.id}.png`;
+      img.src = `https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/01_Genshin/artifact/${set.id}.png`;
       img.alt = set.name;
       img.draggable = false; // ブラウザのimg drag-and-dropを無効化
       img.onerror = () => { img.style.opacity = '0.3'; };
@@ -913,7 +913,7 @@
         if (!set) return;
         const item = document.createElement('div');
         item.className = 'group-popup-item';
-        item.innerHTML = `<img src="artifact/${set.id}.png" alt="${set.name}" onerror="this.style.opacity='0.3'"><span>${set.name}</span>`;
+        item.innerHTML = `<img src="https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/01_Genshin/artifact/${set.id}.png" alt="${set.name}" onerror="this.style.opacity='0.3'"><span>${set.name}</span>`;
         item.addEventListener('click', (e) => {
           e.stopPropagation();
           selectedSetId = set.id;
