@@ -101,6 +101,38 @@ export const characterBuild = {
       MAIN_STATS.CRIT_RATE,
       MAIN_STATS.CRIT_DMG,
       MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "タルタリヤ": {
+    icon: "Tartaglia.png",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "heart_of_depth", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "nymphs_dream", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.HYDRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
       MAIN_STATS.EM
     ]
   },
@@ -414,7 +446,7 @@ export const characterBuild = {
 
     mainStats: {
       sands: MAIN_STATS.ATK_PCT,
-      goblet: MAIN_STATS.ANEMO_DMG,
+      goblet: MAIN_STATS.CRYO_DMG,
       circlet: MAIN_STATS.CRIT
     },
 
@@ -619,8 +651,7 @@ export const characterBuild = {
     subStats: [
       MAIN_STATS.CRIT_RATE,
       MAIN_STATS.CRIT_DMG,
-      MAIN_STATS.ATK_PCT,
-      MAIN_STATS.ER
+      MAIN_STATS.DEF_PCT
     ]
   },
   
