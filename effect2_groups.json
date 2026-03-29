@@ -42,7 +42,6 @@
     "id": "hp20",
     "name": "HP+20%",
     "setIds": [
-      "harmonic_whimsy",
       "vourukasha",
       "millelith"
     ]
@@ -51,6 +50,7 @@
     "id": "atk18",
     "name": "攻撃+18%",
     "setIds": [
+      "harmonic_whimsy",
       "nighttime_whispers",
       "unfinished_reverie",
       "vermillion",

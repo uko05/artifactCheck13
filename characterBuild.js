@@ -4,6 +4,7 @@ export const characterBuild = {
 
   "ファルカ": {
     icon: "faruka.png",
+    Element: "風",
 
     recommendedSets: [
       {
@@ -29,6 +30,7 @@ export const characterBuild = {
   
   "ネフェル": {
     icon: "neferu.png",
+    Element: "草",
 
     recommendedSets: [
       {
@@ -55,6 +57,7 @@ export const characterBuild = {
   
   "宵宮": {
     icon: "Yoimiya.png",
+    Element: "炎",
 
     recommendedSets: [
       {
@@ -81,6 +84,7 @@ export const characterBuild = {
   
   "リネ": {
     icon: "Lyney.png",
+    Element: "炎",
 
     recommendedSets: [
       {
@@ -107,6 +111,7 @@ export const characterBuild = {
   
   "タルタリヤ": {
     icon: "Tartaglia.png",
+    Element: "水",
 
     recommendedSets: [
       {
@@ -139,6 +144,7 @@ export const characterBuild = {
   
   "神里綾人": {
     icon: "KamisatoAyato.png",
+    Element: "水",
 
     recommendedSets: [
       {
@@ -171,6 +177,7 @@ export const characterBuild = {
   
   "シグウィン": {
     icon: "Sigewinne.png",
+    Element: "水",
 
     recommendedSets: [
       {
@@ -203,6 +210,7 @@ export const characterBuild = {
   
   "ムアラニ": {
     icon: "Mualani.png",
+    Element: "水",
 
     recommendedSets: [
       {
@@ -229,6 +237,7 @@ export const characterBuild = {
   
   "アルハイゼン": {
     icon: "Alhaitham.png",
+    Element: "草",
 
     recommendedSets: [
       {
@@ -255,6 +264,7 @@ export const characterBuild = {
   
   "白朮": {
     icon: "Baizhu.png",
+    Element: "草",
 
     recommendedSets: [
       {
@@ -286,6 +296,7 @@ export const characterBuild = {
   
   "キィニチ": {
     icon: "Kinich.png",
+    Element: "草",
 
     recommendedSets: [
       {
@@ -312,6 +323,7 @@ export const characterBuild = {
   
   "ラウマ": {
     icon: "rauma.png",
+    Element: "草",
 
     recommendedSets: [
       {
@@ -344,6 +356,7 @@ export const characterBuild = {
   
   "セノ": {
     icon: "Cyno.png",
+    Element: "雷",
 
     recommendedSets: [
       {
@@ -376,6 +389,7 @@ export const characterBuild = {
   
   "クロリンデ": {
     icon: "Clorinde.png",
+    Element: "雷",
 
     recommendedSets: [
       {
@@ -402,6 +416,7 @@ export const characterBuild = {
   
   "イネファ": {
     icon: "inefa.png",
+    Element: "雷",
 
     recommendedSets: [
       {
@@ -434,6 +449,7 @@ export const characterBuild = {
   
   "リオセスリ": {
     icon: "Wriothesley.png",
+    Element: "氷",
 
     recommendedSets: [
       {
@@ -459,6 +475,7 @@ export const characterBuild = {
   
   "エスコフィエ": {
     icon: "esuko.png",
+    Element: "氷",
 
     recommendedSets: [
       {
@@ -485,6 +502,7 @@ export const characterBuild = {
   
   "スカーク": {
     icon: "skaku.png",
+    Element: "氷",
 
     recommendedSets: [
       {
@@ -510,6 +528,7 @@ export const characterBuild = {
   
   "魈": {
     icon: "Xiao.png",
+    Element: "風",
 
     recommendedSets: [
       {
@@ -543,6 +562,7 @@ export const characterBuild = {
   
   "放浪者": {
     icon: "Scaramouche.png",
+    Element: "風",
 
     recommendedSets: [
       {
@@ -569,6 +589,7 @@ export const characterBuild = {
   
   "閑雲": {
     icon: "Xianyun.png",
+    Element: "風",
 
     recommendedSets: [
       {
@@ -601,6 +622,7 @@ export const characterBuild = {
   
   "チャスカ": {
     icon: "Chasca.png",
+    Element: "風",
 
     recommendedSets: [
       {
@@ -626,6 +648,7 @@ export const characterBuild = {
   
   "アルベド": {
     icon: "Albedo.png",
+    Element: "岩",
 
     recommendedSets: [
       {
@@ -657,6 +680,7 @@ export const characterBuild = {
   
   "荒瀧一斗": {
     icon: "AratakiItto.png",
+    Element: "岩",
 
     recommendedSets: [
       {
@@ -682,6 +706,7 @@ export const characterBuild = {
   
   "ナヴィア": {
     icon: "Navia.png",
+    Element: "岩",
 
     recommendedSets: [
       {
@@ -708,6 +733,7 @@ export const characterBuild = {
   
   "千織": {
     icon: "Chiori.png",
+    Element: "岩",
 
     recommendedSets: [
       {
@@ -739,6 +765,7 @@ export const characterBuild = {
   
   "シロネン": {
     icon: "sironen.png",
+    Element: "岩",
 
     recommendedSets: [
       {
@@ -763,6 +790,7 @@ export const characterBuild = {
   
   "イルーガ": {
     icon: "iruga.png",
+    Element: "岩",
 
     recommendedSets: [
       {
@@ -788,6 +816,7 @@ export const characterBuild = {
   
   "茲白": {
     icon: "shihaku.png",
+    Element: "岩",
 
     recommendedSets: [
       {
@@ -814,6 +843,7 @@ export const characterBuild = {
   
   "鍾離": {
     icon: "Zhongli.png",
+    Element: "岩",
 
     recommendedSets: [
       {
@@ -840,6 +870,7 @@ export const characterBuild = {
   
   "カチーナ": {
     icon: "Kachina.png",
+    Element: "岩",
 
     recommendedSets: [
       {
@@ -866,6 +897,7 @@ export const characterBuild = {
   
   "ゴロー": {
     icon: "Gorou.png",
+    Element: "岩",
 
     recommendedSets: [
       {
@@ -899,6 +931,7 @@ export const characterBuild = {
   
   "雲菫": {
     icon: "YunJin.png",
+    Element: "岩",
 
     recommendedSets: [
       {
@@ -930,6 +963,7 @@ export const characterBuild = {
   
   "凝光": {
     icon: "Ningguang.png",
+    Element: "岩",
 
     recommendedSets: [
       {
@@ -964,6 +998,7 @@ export const characterBuild = {
   
   "ノエル": {
     icon: "Noelle.png",
+    Element: "岩",
 
     recommendedSets: [
       {
@@ -995,6 +1030,7 @@ export const characterBuild = {
   
   "夢見月瑞希": {
     icon: "mizuki.png",
+    Element: "風",
 
     recommendedSets: [
       {
@@ -1021,6 +1057,7 @@ export const characterBuild = {
   
   "楓原万葉": {
     icon: "KazuhaKaedehara.png",
+    Element: "風",
 
     recommendedSets: [
       {
@@ -1047,6 +1084,7 @@ export const characterBuild = {
   
   "ウェンティ": {
     icon: "Venti.png",
+    Element: "風",
 
     recommendedSets: [
       {
@@ -1079,6 +1117,7 @@ export const characterBuild = {
   
   "ジン": {
     icon: "Jean.png",
+    Element: "風",
 
     recommendedSets: [
       {
@@ -1105,6 +1144,7 @@ export const characterBuild = {
   
   "ヤフォダ": {
     icon: "yafoda.png",
+    Element: "風",
 
     recommendedSets: [
       {
@@ -1136,6 +1176,7 @@ export const characterBuild = {
   
   "イファ": {
     icon: "ifa.png",
+    Element: "風",
 
     recommendedSets: [
       {
@@ -1168,6 +1209,7 @@ export const characterBuild = {
   
   "藍硯": {
     icon: "ranyan.png",
+    Element: "風",
 
     recommendedSets: [
       {
@@ -1194,6 +1236,7 @@ export const characterBuild = {
  
   "リネット": {
     icon: "Lynette.png",
+    Element: "風",
 
     recommendedSets: [
       {
@@ -1226,6 +1269,7 @@ export const characterBuild = {
   
   "ファルザン": {
     icon: "Faruzan.png",
+    Element: "風",
 
     recommendedSets: [
       {
@@ -1258,6 +1302,7 @@ export const characterBuild = {
   
   "鹿野院平蔵": {
     icon: "Heizou.png",
+    Element: "風",
 
     recommendedSets: [
       {
@@ -1291,6 +1336,7 @@ export const characterBuild = {
    
   "スクロース": {
     icon: "Sucrose.png",
+    Element: "風",
 
     recommendedSets: [
       {
@@ -1317,6 +1363,7 @@ export const characterBuild = {
   
   "早柚": {
     icon: "Sayu.png",
+    Element: "風",
 
     recommendedSets: [
       {
@@ -1343,6 +1390,7 @@ export const characterBuild = {
   
   "カーヴェ": {
     icon: "Kaveh.png",
+    Element: "草",
 
     recommendedSets: [
       {
@@ -1375,6 +1423,7 @@ export const characterBuild = {
   
   "綺良々": {
     icon: "Kirara.png",
+    Element: "草",
 
     recommendedSets: [
       {
@@ -1407,6 +1456,7 @@ export const characterBuild = {
   
   "ヨォーヨ": {
     icon: "Yaoyao.png",
+    Element: "草",
 
     recommendedSets: [
       {
@@ -1433,6 +1483,7 @@ export const characterBuild = {
   
   "ティナリ": {
     icon: "Tighnari.png",
+    Element: "草",
 
     recommendedSets: [
       {
@@ -1465,6 +1516,7 @@ export const characterBuild = {
   
   "ナヒーダ": {
     icon: "Nahida.png",
+    Element: "草",
 
     recommendedSets: [
       {
@@ -1491,6 +1543,7 @@ export const characterBuild = {
   
   "エミリエ": {
     icon: "Emilie.png",
+    Element: "草",
 
     recommendedSets: [
       {
@@ -1523,6 +1576,7 @@ export const characterBuild = {
   
   "コレイ": {
     icon: "Collei.png",
+    Element: "草",
 
     recommendedSets: [
       {
@@ -1549,6 +1603,7 @@ export const characterBuild = {
   
   "キャンディス": {
     icon: "Candace.png",
+    Element: "水",
 
     recommendedSets: [
       {
@@ -1582,6 +1637,7 @@ export const characterBuild = {
   
   "ダリア": {
     icon: "daria.png",
+    Element: "水",
 
     recommendedSets: [
       {
@@ -1606,6 +1662,7 @@ export const characterBuild = {
   
   "バーバラ": {
     icon: "barbara.png",
+    Element: "水",
 
     recommendedSets: [
       {
@@ -1636,6 +1693,7 @@ export const characterBuild = {
   
   "行秋": {
     icon: "Xingqiu.png",
+    Element: "水",
 
     recommendedSets: [
       {
@@ -1662,6 +1720,7 @@ export const characterBuild = {
   
   "モナ": {
     icon: "Mona.png",
+    Element: "水",
 
     recommendedSets: [
       {
@@ -1694,6 +1753,7 @@ export const characterBuild = {
   
   "アイノ": {
     icon: "aino.png",
+    Element: "水",
 
     recommendedSets: [
       {
@@ -1720,6 +1780,7 @@ export const characterBuild = {
   
   "珊瑚宮心海": {
     icon: "Kokomi.png",
+    Element: "水",
 
     recommendedSets: [
       {
@@ -1751,6 +1812,7 @@ export const characterBuild = {
   
   "夜蘭": {
     icon: "Yelan.png",
+    Element: "水",
 
     recommendedSets: [
       {
@@ -1777,6 +1839,7 @@ export const characterBuild = {
   
   "ニィロウ": {
     icon: "Nilou.png",
+    Element: "水",
 
     recommendedSets: [
       {
@@ -1802,6 +1865,7 @@ export const characterBuild = {
   
   "ヌヴィレット": {
     icon: "Neuvillette.png",
+    Element: "水",
 
     recommendedSets: [
       {
@@ -1827,6 +1891,7 @@ export const characterBuild = {
   
   "コロンビーナ": {
     icon: "shojo.png",
+    Element: "水",
 
     recommendedSets: [
       {
@@ -1859,6 +1924,7 @@ export const characterBuild = {
   
   "フリーナ": {
     icon: "Furina.png",
+    Element: "水",
 
     recommendedSets: [
       {
@@ -1885,6 +1951,7 @@ export const characterBuild = {
   
   "シトラリ": {
     icon: "sitorari.png",
+    Element: "氷",
 
     recommendedSets: [
       {
@@ -1911,6 +1978,7 @@ export const characterBuild = {
   
   "申鶴": {
     icon: "Shenhe.png",
+    Element: "氷",
 
     recommendedSets: [
       {
@@ -1944,6 +2012,7 @@ export const characterBuild = {
   
   "エウルア": {
     icon: "Eula.png",
+    Element: "氷",
 
     recommendedSets: [
       {
@@ -1977,6 +2046,7 @@ export const characterBuild = {
   
   "甘雨": {
     icon: "Ganyu.png",
+    Element: "氷",
 
     recommendedSets: [
       {
@@ -2008,6 +2078,7 @@ export const characterBuild = {
   
   "七七": {
     icon: "Qiqi.png",
+    Element: "氷",
 
     recommendedSets: [
       {
@@ -2040,6 +2111,7 @@ export const characterBuild = {
   
   "神里綾華": {
     icon: "AyakaKamisato.png",
+    Element: "氷",
 
     recommendedSets: [
       {
@@ -2066,6 +2138,7 @@ export const characterBuild = {
   
   "シャルロット": {
     icon: "Charlotte.png",
+    Element: "氷",
 
     recommendedSets: [
       {
@@ -2099,6 +2172,7 @@ export const characterBuild = {
   
   "レイラ": {
     icon: "Layla.png",
+    Element: "氷",
 
     recommendedSets: [
       {
@@ -2125,6 +2199,7 @@ export const characterBuild = {
   
   "ディオナ": {
     icon: "Diona.png",
+    Element: "氷",
 
     recommendedSets: [
       {
@@ -2157,6 +2232,7 @@ export const characterBuild = {
   
   "重雲": {
     icon: "Chongyun.png",
+    Element: "氷",
 
     recommendedSets: [
       {
@@ -2189,6 +2265,7 @@ export const characterBuild = {
   
   "アーロイ": {
     icon: "aroi.png",
+    Element: "氷",
 
     recommendedSets: [
       {
@@ -2222,6 +2299,7 @@ export const characterBuild = {
   
   "フレミネ": {
     icon: "Freminet.png",
+    Element: "氷",
 
     recommendedSets: [
       {
@@ -2254,6 +2332,7 @@ export const characterBuild = {
   
   "ミカ": {
     icon: "Mika.png",
+    Element: "氷",
 
     recommendedSets: [
       {
@@ -2280,6 +2359,7 @@ export const characterBuild = {
   
   "ロサリア": {
     icon: "rosaria.png",
+    Element: "氷",
 
     recommendedSets: [
       {
@@ -2312,6 +2392,7 @@ export const characterBuild = {
   
   "ガイア": {
     icon: "Kaeya.png",
+    Element: "氷",
 
     recommendedSets: [
       {
@@ -2344,6 +2425,7 @@ export const characterBuild = {
   
   "ドゥリン": {
     icon: "dorin.png",
+    Element: "炎",
 
     recommendedSets: [
       {
@@ -2376,6 +2458,7 @@ export const characterBuild = {
   
   "マーヴィカ": {
     icon: "Mavuika.png",
+    Element: "炎",
 
     recommendedSets: [
       {
@@ -2402,6 +2485,7 @@ export const characterBuild = {
   
   "アルレッキーノ": {
     icon: "Arlecchino.png",
+    Element: "炎",
 
     recommendedSets: [
       {
@@ -2433,6 +2517,7 @@ export const characterBuild = {
   
   "ディシア": {
     icon: "Dehya.png",
+    Element: "炎",
 
     recommendedSets: [
       {
@@ -2465,6 +2550,7 @@ export const characterBuild = {
   
   "胡桃": {
     icon: "Hutao.png",
+    Element: "炎",
 
     recommendedSets: [
       {
@@ -2497,6 +2583,7 @@ export const characterBuild = {
   
   "クレー": {
     icon: "Klee.png",
+    Element: "炎",
 
     recommendedSets: [
       {
@@ -2523,6 +2610,7 @@ export const characterBuild = {
   
   "嘉明": {
     icon: "Gaming.png",
+    Element: "炎",
 
     recommendedSets: [
       {
@@ -2555,6 +2643,7 @@ export const characterBuild = {
   
   "シュヴルーズ": {
     icon: "Chevreuse.png",
+    Element: "炎",
 
     recommendedSets: [
       {
@@ -2587,6 +2676,7 @@ export const characterBuild = {
   
   "煙緋": {
     icon: "YanFei.png",
+    Element: "炎",
 
     recommendedSets: [
       {
@@ -2619,6 +2709,7 @@ export const characterBuild = {
   
   "ベネット": {
     icon: "Bennett.png",
+    Element: "炎",
 
     recommendedSets: [
       {
@@ -2645,6 +2736,7 @@ export const characterBuild = {
   
   "香菱": {
     icon: "Xiangling.png",
+    Element: "炎",
 
     recommendedSets: [
       {
@@ -2671,6 +2763,7 @@ export const characterBuild = {
   
   "ディルック": {
     icon: "Diluc.png",
+    Element: "炎",
 
     recommendedSets: [
       {
@@ -2697,6 +2790,7 @@ export const characterBuild = {
   
   "辛炎": {
     icon: "Xinyan.png",
+    Element: "炎",
 
     recommendedSets: [
       {
@@ -2730,6 +2824,7 @@ export const characterBuild = {
   
   "トーマ": {
     icon: "Thoma.png",
+    Element: "炎",
 
     recommendedSets: [
       {
@@ -2763,6 +2858,7 @@ export const characterBuild = {
   
   "フリンズ": {
     icon: "hurinzu.png",
+    Element: "雷",
 
     recommendedSets: [
       {
@@ -2789,6 +2885,7 @@ export const characterBuild = {
   
   "ヴァレサ": {
     icon: "baresa.png",
+    Element: "雷",
 
     recommendedSets: [
       {
@@ -2821,6 +2918,7 @@ export const characterBuild = {
   
   "八重神子": {
     icon: "YaeMiko.png",
+    Element: "雷",
 
     recommendedSets: [
       {
@@ -2853,6 +2951,7 @@ export const characterBuild = {
   
   "雷電将軍": {
     icon: "Raiden.png",
+    Element: "雷",
 
     recommendedSets: [
       {
@@ -2879,6 +2978,7 @@ export const characterBuild = {
   
   "刻晴": {
     icon: "Keqing.png",
+    Element: "雷",
 
     recommendedSets: [
       {
@@ -2912,6 +3012,7 @@ export const characterBuild = {
   
   "イアンサ": {
     icon: "Iansan.png",
+    Element: "雷",
 
     recommendedSets: [
       {
@@ -2938,6 +3039,7 @@ export const characterBuild = {
   
   "久岐忍": {
     icon: "KukiShinobu.png",
+    Element: "雷",
 
     recommendedSets: [
       {
@@ -2970,6 +3072,7 @@ export const characterBuild = {
   
   "北斗": {
     icon: "Beidou.png",
+    Element: "雷",
 
     recommendedSets: [
       {
@@ -2996,6 +3099,7 @@ export const characterBuild = {
   
   "オロルン": {
     icon: "oruron.png",
+    Element: "雷",
 
     recommendedSets: [
       {
@@ -3022,6 +3126,7 @@ export const characterBuild = {
   
   "フィッシュル": {
     icon: "Fischl.png",
+    Element: "雷",
 
     recommendedSets: [
       {
@@ -3048,6 +3153,7 @@ export const characterBuild = {
   
   "九条裟羅": {
     icon: "KujouSara.png",
+    Element: "雷",
 
     recommendedSets: [
       {
@@ -3074,6 +3180,7 @@ export const characterBuild = {
   
   "ドリー": {
     icon: "Dori.png",
+    Element: "雷",
 
     recommendedSets: [
       {
@@ -3107,6 +3214,7 @@ export const characterBuild = {
   
   "セトス": {
     icon: "Sethos.png",
+    Element: "雷",
 
     recommendedSets: [
       {
@@ -3133,6 +3241,7 @@ export const characterBuild = {
   
   "レザー": {
     icon: "Razor.png",
+    Element: "雷",
 
     recommendedSets: [
       {
@@ -3159,6 +3268,7 @@ export const characterBuild = {
   
   "リサ": {
     icon: "Lisa.png",
+    Element: "雷",
 
     recommendedSets: [
       {
@@ -3191,6 +3301,7 @@ export const characterBuild = {
   
   "アンバー": {
     icon: "amber.png",
+    Element: "炎",
 
     recommendedSets: [
       {

@@ -1,67 +1,39 @@
-# 修正依頼：ArtifactCheck13 に Google Analytics 4 を追加
+①charElementMapでまとめるんじゃなくて、各キャラごとに下記のように項目を追加してください。
+  "アンバー": {
+    icon: "amber.png",
+    Element: "炎",
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "wanderers_troupe", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "crimson_witch", count: 4 }
+        ]
+      }
+    ],
 
-対象サイト：
-`https://uko05.github.io/artifactCheck13/`
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.PYRO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
 
-目的：
-「これいる聖遺物」を、他サイトとは別のGoogle Analyticsプロパティで計測したいです。
-基本のページ計測ができて、リアルタイムでアクセス確認できる状態にしてください。
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  }
+  
+  
+②タブは今のような形式ではなく、E:\20_GitHub\04_Mirishira　のHTMLと同じ形式にしてください。
 
----
+③タブの中のキャラの画像は並べる形式ではなく、聖遺物タブの聖遺物と同じ回転横スクロール形式にしてください。
 
-## 対応内容
-
-* `artifactCheck13` プロジェクトに Google Analytics 4 を追加
-* 既存の別サイト用GAではなく、このサイト専用の Measurement ID を使用
-* 全ページで確実に読み込まれる `<head>` に埋め込む
-* デプロイ後、GA4のリアルタイムでアクセス確認できる状態にする
-
----
-
-## 使用する Measurement ID
-
-```text
-G-X5FKJL6K2X
-```
-
----
-
-## 追加するコード
-
-```html
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-X5FKJL6K2X"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-X5FKJL6K2X');
-</script>
-```
-
----
-
-## 実装条件
-
-* `index.html` の `<head>` 内に追加すること
-* もし共通テンプレートや共通head読込箇所があるなら、全ページで有効になる場所に追加すること
-* 既存コードを壊さないこと
-* 重複してGAタグを入れないこと
-* 追加後にGitHub Pagesで動作確認すること
-
----
-
-## 確認項目
-
-* `https://uko05.github.io/artifactCheck13/` を開いたときにGA4へ計測が飛ぶ
-* Google Analytics のリアルタイムでアクセスが見える
-* コンソールエラーが出ていない
-
----
-
-## 補足
-
-* 今回はまず基本のページ計測だけでOK
-* カスタムイベントやボタンクリック計測は不要
-* 他サイトとは分離した別プロパティとして扱う
+④キャラタブの中の元素タブはE:\20_GitHub\04_Mirishiraと違って、「ALL」というタブを一番左に入れて全キャラが出るようにしてください。
