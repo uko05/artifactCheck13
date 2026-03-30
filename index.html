@@ -75,6 +75,32 @@
     .artifact-scroll-outer {
       overflow: hidden;
       border-top: 1px solid var(--border);
+      position: relative;
+    }
+    /* 案A：1周の区切り線（太め赤線） */
+    .scroll-divider {
+      flex-shrink: 0;
+      width: 6px;
+      height: 60px;
+      align-self: center;
+      margin: 0 10px;
+      background: #e05a2b;
+      border-radius: 2px;
+    }
+    /* 案C：現在位置インジケーター */
+    .scroll-indicator {
+      position: absolute;
+      top: 5px;
+      right: 8px;
+      background: rgba(0,0,0,0.42);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: bold;
+      padding: 2px 7px;
+      border-radius: 10px;
+      pointer-events: none;
+      z-index: 3;
+      letter-spacing: 0.04em;
     }
 
     .artifact-scroll-wrap {
@@ -598,6 +624,15 @@
     #ctab-dendro:checked  + .char-tab-label { background: #3a9b47; }
     #ctab-anemo:checked   + .char-tab-label { background: #2aaba8; }
     #ctab-geo:checked     + .char-tab-label { background: #c8963e; }
+    /* 案A：キャラタブの区切り線を元素色に合わせる */
+    #ctab-all:checked     + .char-tab-label + .char-tab-content .scroll-divider { background: #666; }
+    #ctab-pyro:checked    + .char-tab-label + .char-tab-content .scroll-divider { background: #e05a2b; }
+    #ctab-hydro:checked   + .char-tab-label + .char-tab-content .scroll-divider { background: #2b6be0; }
+    #ctab-cryo:checked    + .char-tab-label + .char-tab-content .scroll-divider { background: #42a5c8; }
+    #ctab-electro:checked + .char-tab-label + .char-tab-content .scroll-divider { background: #9b59b6; }
+    #ctab-dendro:checked  + .char-tab-label + .char-tab-content .scroll-divider { background: #3a9b47; }
+    #ctab-anemo:checked   + .char-tab-label + .char-tab-content .scroll-divider { background: #2aaba8; }
+    #ctab-geo:checked     + .char-tab-label + .char-tab-content .scroll-divider { background: #c8963e; }
 
     /* ========== キャラ詳細（キャラタブ・メインエリア） ========== */
     .chara-detail-card {
@@ -960,13 +995,31 @@
       return btn;
     }
 
+    function makeScrollDivider() {
+      const d = document.createElement('div');
+      d.className = 'scroll-divider';
+      return d;
+    }
+
+    let artifactIndicator = null;
+    let artifactRafPending = false;
+
     function renderArtifactScroll() {
       scrollEl.innerHTML = '';
+      const n = artifactSets.length;
       for (let c = 0; c < COPIES; c++) {
+        scrollEl.appendChild(makeScrollDivider());
         for (const set of artifactSets) {
           scrollEl.appendChild(makeArtifactBtn(set));
         }
       }
+      // インジケーター生成
+      const outer = scrollEl.parentElement;
+      outer.querySelector('.scroll-indicator')?.remove();
+      artifactIndicator = document.createElement('div');
+      artifactIndicator.className = 'scroll-indicator';
+      artifactIndicator.textContent = `1 / ${n}`;
+      outer.appendChild(artifactIndicator);
 
       requestAnimationFrame(() => {
         singleWidth = scrollEl.scrollWidth / COPIES;
@@ -974,7 +1027,11 @@
         const allBtns = scrollEl.querySelectorAll('.artifact-btn');
         const targetBtn = allBtns[artifactSets.length + selIdx];
         if (targetBtn) {
-          const offset = targetBtn.offsetLeft - (scrollEl.clientWidth / 2) + (targetBtn.offsetWidth / 2);
+          // getBoundingClientRect で offsetParent に依存しない正確な位置計算
+          const scrollRect = scrollEl.getBoundingClientRect();
+          const btnRect = targetBtn.getBoundingClientRect();
+          const relLeft = btnRect.left - scrollRect.left + scrollEl.scrollLeft;
+          const offset = relLeft - (scrollEl.clientWidth - targetBtn.offsetWidth) / 2;
           scrollEl.scrollLeft = Math.max(singleWidth * 0.1, offset);
         } else {
           scrollEl.scrollLeft = singleWidth;
@@ -989,6 +1046,24 @@
         scrollEl.scrollLeft += singleWidth;
       } else if (scrollEl.scrollLeft > singleWidth * 1.7) {
         scrollEl.scrollLeft -= singleWidth;
+      }
+      // 案C：インジケーター更新（rAFでスロットル）
+      if (!artifactRafPending) {
+        artifactRafPending = true;
+        requestAnimationFrame(() => {
+          artifactRafPending = false;
+          if (!artifactIndicator) return;
+          const n = artifactSets.length;
+          const cx = scrollEl.getBoundingClientRect().left + scrollEl.clientWidth / 2;
+          const btns = scrollEl.querySelectorAll('.artifact-btn');
+          let best = 0, minDist = Infinity;
+          for (let i = 0; i < btns.length; i++) {
+            const r = btns[i].getBoundingClientRect();
+            const dist = Math.abs(r.left + r.width / 2 - cx);
+            if (dist < minDist) { minDist = dist; best = i % n; }
+          }
+          artifactIndicator.textContent = `${best + 1} / ${n}`;
+        });
       }
     }, { passive: true });
 
@@ -1444,7 +1519,9 @@
 
     function initCharScroll(scrollEl, charNames) {
       scrollEl.innerHTML = '';
+      const n = charNames.length;
       for (let c = 0; c < COPIES; c++) {
+        scrollEl.appendChild(makeScrollDivider());
         for (const charName of charNames) {
           const btn = makeCharScrollBtn(charName);
           btn.addEventListener('click', () => {
@@ -1459,7 +1536,16 @@
         }
       }
 
+      // インジケーター生成
+      const outer = scrollEl.parentElement;
+      outer.querySelector('.scroll-indicator')?.remove();
+      const indicator = document.createElement('div');
+      indicator.className = 'scroll-indicator';
+      indicator.textContent = `1 / ${n}`;
+      outer.appendChild(indicator);
+
       let singleWidth = 0;
+      let charRafPending = false;
       requestAnimationFrame(() => {
         singleWidth = scrollEl.scrollWidth / COPIES;
         scrollEl.scrollLeft = singleWidth;
@@ -1469,6 +1555,22 @@
         if (!singleWidth) return;
         if (scrollEl.scrollLeft < singleWidth * 0.3)       scrollEl.scrollLeft += singleWidth;
         else if (scrollEl.scrollLeft > singleWidth * 1.7)  scrollEl.scrollLeft -= singleWidth;
+        // 案C：インジケーター更新
+        if (!charRafPending) {
+          charRafPending = true;
+          requestAnimationFrame(() => {
+            charRafPending = false;
+            const cx = scrollEl.getBoundingClientRect().left + scrollEl.clientWidth / 2;
+            const btns = scrollEl.querySelectorAll('.artifact-btn');
+            let best = 0, minDist = Infinity;
+            for (let i = 0; i < btns.length; i++) {
+              const r = btns[i].getBoundingClientRect();
+              const dist = Math.abs(r.left + r.width / 2 - cx);
+              if (dist < minDist) { minDist = dist; best = i % n; }
+            }
+            indicator.textContent = `${best + 1} / ${n}`;
+          });
+        }
       }, { passive: true });
 
       scrollEl.addEventListener('wheel', (e) => {
