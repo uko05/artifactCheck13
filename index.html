@@ -741,14 +741,48 @@
       text-align: center;
       width: 70px;
     }
+    .chara-footer-art-col {
+      width: 90px;
+    }
+    .chara-footer-art-col .chara-set-icon-wrap {
+      cursor: pointer;
+      overflow: visible;
+    }
+    .chara-footer-art-col .chara-set-icon-wrap:hover img { opacity: 0.85; }
+    .chara-footer-art-col .chara-set-icon-badge {
+      bottom: -6px;
+      background: rgba(255, 204, 0, 0.65);
+      color: #333;
+      border-radius: 0 0 6px 6px;
+    }
     .chara-footer-art-col img {
-      width: 56px;
-      height: 56px;
+      width: 80px;
+      height: 80px;
       border-radius: 6px;
       object-fit: contain;
-      cursor: pointer;
+      display: block;
     }
-    .chara-footer-art-col img:hover { opacity: 0.8; }
+    /* キャラ詳細内の聖遺物アイコンバッジ */
+    .chara-set-icon-wrap {
+      position: relative;
+      display: inline-block;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .chara-set-icon-badge {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 204, 0, 0.65);
+      color: #333;
+      font-size: 0.75rem;
+      font-weight: normal;
+      text-align: center;
+      padding: 3px 0;
+      line-height: 1.4;
+      pointer-events: none;
+    }
     .chara-footer-art-name {
       font-size: 0.65rem;
       font-weight: bold;
@@ -805,7 +839,7 @@
       <!-- 妥協チェックボックス -->
       <div class="alt-check-bar">
         <label class="alt-check-label">
-          <input type="checkbox" id="show-alt">
+          <input type="checkbox" id="show-alt" checked>
           妥協聖遺物も含む
         </label>
       </div>
@@ -898,12 +932,13 @@
       fetch('./effect2_groups.json').then(r => r.json()),
     ]);
 
-    const LS_KEY = 'artifactcheck_selected_set';
+    const LS_KEY     = 'artifactcheck_selected_set';
+    const LS_ALT_KEY = 'artifactcheck_show_alt';
 
     let selectedSetId = localStorage.getItem(LS_KEY) ?? artifactSets[0].id;
     let selectedPart  = 'sands';
     let selectedChar  = null;
-    let showAlt       = false;
+    let showAlt       = localStorage.getItem(LS_ALT_KEY) !== 'false'; // デフォルトtrue
 
     // sets[] が selectedSetId にマッチするか判定
     // - 直接IDマッチ
@@ -1376,14 +1411,17 @@
       inner.innerHTML = `
         <div class="chara-footer-artifact">
           <div class="chara-footer-art-col">
-            <img class="chara-footer-art-img" src="https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/01_Genshin/artifact/${set.id}.png" alt="${set.name}" onerror="this.style.opacity='0.3'" title="クリックで聖遺物タブへ">
+            <span class="chara-set-icon-wrap">
+              <img class="chara-footer-art-img" src="https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/01_Genshin/artifact/${set.id}.png" alt="${set.name}" onerror="this.style.opacity='0.3'">
+              <span class="chara-set-icon-badge">タブで見る</span>
+            </span>
             <div class="chara-footer-art-name">${set.name}</div>
           </div>
           <div class="chara-footer-effects">${effect2Html}${effect4Html}</div>
         </div>
       `;
       // 画像クリック → 聖遺物タブへ切り替え（選択キャラを引き継ぎ）
-      inner.querySelector('.chara-footer-art-img').addEventListener('click', (e) => {
+      inner.querySelector('.chara-set-icon-wrap').addEventListener('click', (e) => {
         e.stopPropagation();
         selectedSetId = setId;
         localStorage.setItem(LS_KEY, selectedSetId);
@@ -1425,8 +1463,11 @@
       });
     });
 
-    document.getElementById('show-alt').addEventListener('change', (e) => {
+    const showAltEl = document.getElementById('show-alt');
+    showAltEl.checked = showAlt;
+    showAltEl.addEventListener('change', (e) => {
       showAlt = e.target.checked;
+      localStorage.setItem(LS_ALT_KEY, showAlt);
       renderMain();
     });
 
@@ -1625,13 +1666,13 @@
           if (master) {
             return `<span class="chara-set-entry" data-set-id="${s.id}" data-count="${s.count}">` +
               `<span class="chara-set-name">${master.name}(${s.count}セット)</span>` +
-              `<span class="chara-set-icons"><img class="chara-set-icon" src="${CDN}${s.id}.png" alt="${master.name}" onerror="this.style.opacity='0.3'"></span>` +
+              `<span class="chara-set-icons"><span class="chara-set-icon-wrap"><img class="chara-set-icon" src="${CDN}${s.id}.png" alt="${master.name}" onerror="this.style.opacity='0.3'"><span class="chara-set-icon-badge">詳細へ</span></span></span>` +
               `</span>`;
           }
           const group = effect2Groups.find(g => g.id === s.id);
           if (group) {
             const imgs = group.setIds.map(sid =>
-              `<img class="chara-set-icon" data-set-id="${sid}" data-count="2" src="${CDN}${sid}.png" alt="${sid}" onerror="this.style.opacity='0.3'">`
+              `<span class="chara-set-icon-wrap"><img class="chara-set-icon" data-set-id="${sid}" data-count="2" src="${CDN}${sid}.png" alt="${sid}" onerror="this.style.opacity='0.3'"><span class="chara-set-icon-badge">詳細へ</span></span>`
             ).join('');
             return `<span class="group-link chara-set-entry" data-group-id="${s.id}" data-count="${s.count}">` +
               `<span class="chara-set-name">${group.name}(${s.count}セット)</span>` +
