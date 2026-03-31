@@ -62,6 +62,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
     }
 
     .header-top h1 {
@@ -805,6 +806,31 @@
     @media (max-width: 600px) {
       .tab-btn { font-size: 0.82rem; }
     }
+
+    /* ========== フッター SNS ========== */
+    .site-footer {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 6px;
+    }
+    .site-footer a {
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    .site-footer a:hover {
+      opacity: 1;
+    }
+    .site-footer img {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
   </style>
 
   <!-- Google tag (gtag.js) -->
@@ -825,6 +851,15 @@
   <header id="main-header">
     <div class="header-top">
       <h1>これいる聖遺物</h1>
+      <!-- フッター SNS リンク -->
+      <footer class="site-footer">
+        <a href="https://x.com/uko_dayo_" target="_blank" rel="noopener">
+          <img src="https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/00_common/footer_icon/twitter_image.png" alt="Twitter">
+        </a>
+        <a href="https://t.co/0jAcAV2GJv" target="_blank" rel="noopener">
+          <img src="https://cdn.jsdelivr.net/gh/uko05/99_SharedImage@main/00_common/footer_icon/discord_image.png" alt="Discord">
+        </a>
+      </footer>
     </div>
     <!-- メインモードタブ -->
     <div class="main-mode-tab-bar" id="main-mode-tab-bar">
