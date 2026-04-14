@@ -2,6 +2,39 @@ import { MAIN_STATS, PARTS } from "./stats.js";
 
 export const characterBuild = {
 
+  "リンネア": {
+    icon: "linnea.png",
+    Element: "岩",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "aubade_of_morningstar_and_moon", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "husk", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.DEF_PCT,
+      goblet: MAIN_STATS.DEF_PCT,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.DEF_PCT,
+      MAIN_STATS.EM
+    ]
+  },
+  
   "ファルカ": {
     icon: "faruka.png",
     Element: "風",
