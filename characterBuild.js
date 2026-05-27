@@ -2,6 +2,56 @@ import { MAIN_STATS, PARTS } from "./stats.js";
 
 export const characterBuild = {
 
+  "ニコ": {
+    icon: "niko.png",
+    Element: "炎",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "Celestial_Gift", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ATK_PCT,
+      circlet: MAIN_STATS.ATK_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "プルーネ": {
+    icon: "puruune.png",
+    Element: "風",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "viridescent", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ATK_PCT,
+      circlet: MAIN_STATS.ATK_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
   "リンネア": {
     icon: "linnea.png",
     Element: "岩",
