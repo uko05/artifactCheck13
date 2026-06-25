@@ -2,6 +2,32 @@ import { MAIN_STATS, PARTS } from "./stats.js";
 
 export const characterBuild = {
 
+  "ローエン": {
+    icon: "rooen.png",
+    Element: "氷",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "A_Day_Carved_From_Rising_Winds", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.CRYO_DMG,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT
+    ]
+  },
+  
   "ニコ": {
     icon: "niko.png",
     Element: "炎",
