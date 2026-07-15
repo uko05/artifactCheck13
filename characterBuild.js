@@ -2,6 +2,33 @@ import { MAIN_STATS, PARTS } from "./stats.js";
 
 export const characterBuild = {
 
+  "サンドローネ": {
+    icon: "kairai.png",
+    Element: "氷",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "Disenchantment_in_Deep_Shadow", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ATK_PCT,
+      circlet: MAIN_STATS.CRIT_DMG
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.EM
+    ]
+  },
+  
   "ローエン": {
     icon: "rooen.png",
     Element: "氷",
