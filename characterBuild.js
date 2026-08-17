@@ -10,7 +10,7 @@ export const characterBuild = {
       {
         rank: 1,
         sets: [
-          { id: "Disenchantment_in_Deep_Shadow", count: 4 }
+          { id: "Heart_of_the_Furnace", count: 4 }
         ]
       }
     ],
@@ -25,7 +25,7 @@ export const characterBuild = {
       MAIN_STATS.CRIT_RATE,
       MAIN_STATS.CRIT_DMG,
       MAIN_STATS.ATK_PCT,
-      MAIN_STATS.EM
+      MAIN_STATS.ER
     ]
   },
   
