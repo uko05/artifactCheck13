@@ -2,6 +2,33 @@ import { MAIN_STATS, PARTS } from "./stats.js";
 
 export const characterBuild = {
 
+  "オデット": {
+    icon: "オデット.png",
+    Element: "氷",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "Disenchantment_in_Deep_Shadow", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ATK_PCT,
+      circlet: MAIN_STATS.CRIT_DMG
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.EM
+    ]
+  },
+  
   "サンドローネ": {
     icon: "kairai.png",
     Element: "氷",
@@ -2064,13 +2091,13 @@ export const characterBuild = {
       {
         rank: 1,
         sets: [
-          { id: "gilded_dreams", count: 4 }
+          { id: "Disenchantment_in_Deep_Shadow", count: 4 }
         ]
       },
       {
         rank: 2,
         sets: [
-          { id: "golden_troupe", count: 4 }
+          { id: "gilded_dreams", count: 4 }
         ]
       }
     ],
@@ -2970,13 +2997,13 @@ export const characterBuild = {
       {
         rank: 1,
         sets: [
-          { id: "ocean_clam", count: 4 }
+          { id: "millelith", count: 4 }
         ]
       },
       {
         rank: 2,
         sets: [
-          { id: "maiden_beloved", count: 4 }
+          { id: "ocean_clam", count: 4 }
         ]
       }
     ],
