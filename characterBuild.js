@@ -12,6 +12,12 @@ export const characterBuild = {
         sets: [
           { id: "Heart_of_the_Furnace", count: 4 }
         ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "Disenchantment_in_Deep_Shadow", count: 4 }
+        ]
       }
     ],
 
