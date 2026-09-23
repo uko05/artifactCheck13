@@ -49,10 +49,7 @@ export const characterBuild = {
     },
 
     subStats: [
-      MAIN_STATS.CRIT_RATE,
-      MAIN_STATS.CRIT_DMG,
-      MAIN_STATS.HP_PCT,
-      MAIN_STATS.ER
+      MAIN_STATS.HP_PCT
     ]
   },
   
