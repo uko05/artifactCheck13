@@ -2,6 +2,60 @@ import { MAIN_STATS, PARTS } from "./stats.js";
 
 export const characterBuild = {
 
+  "ヴェスナ": {
+    icon: "ヴェスナ.png",
+    Element: "風",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "Scarlet_Proof", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ATK_PCT,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.EM
+    ]
+  },
+  
+  "ヴォジャニーツァ": {
+    icon: "ヴォジャニーツァ.png",
+    Element: "水",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "millelith", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.HP_PCT,
+      goblet: MAIN_STATS.HP_PCT,
+      circlet: MAIN_STATS.HP_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
   "オデット": {
     icon: "オデット.png",
     Element: "氷",
@@ -11,12 +65,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "Heart_of_the_Furnace", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "Disenchantment_in_Deep_Shadow", count: 4 }
         ]
       }
     ],
@@ -675,6 +723,12 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "viridescent", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "Scarlet_Proof", count: 4 }
         ]
       }
     ],
