@@ -1814,10 +1814,32 @@
   .uko-about li{margin:2px 0;list-style:revert}
   .uko-about dt{font-weight:bold;margin-top:6px}
   .uko-about dd{margin:0 0 4px 1em}
+  .uko-about [hidden]{display:none!important}
   </style>
   <details class="uko-about">
-    <summary>このサイトについて</summary>
-    <div class="uko-about-body"><h2>これいる聖遺物とは</h2><p>「この聖遺物、残す？分解する？」を判断するための原神ツールです。聖遺物セットと部位（時計・杯・冠）のメインステータスを選ぶと、その聖遺物を使うキャラクターが一覧で表示されます。厳選や整理のときに、必要な聖遺物をうっかり分解してしまうのを防げます。</p><h2>使い方</h2><ol><li>「聖遺物」タブで、手持ちの聖遺物のセットを選びます。</li><li>時計・杯・冠の場合は、メインステータス（攻撃力%・元素熟知・会心率など）で絞り込みます。</li><li>表示されたキャラがいれば「いる」、誰も出なければ分解や強化素材にしてOK、の目安になります。</li></ol><p>「キャラ」タブでは、キャラごとのおすすめ聖遺物セット、時計・杯・冠のメインステータス、優先したいサブステータスを確認できます。</p><h2>よくある質問</h2><dl><dt>Q. 「妥協聖遺物も含む」とは？</dt><dd>A. 最適ではないけれど代わりに使える聖遺物セットも、表示に含めます。オフにすると、一番おすすめのセットだけが表示されます。</dd><dt>Q. 新キャラには対応している？</dt><dd>A. 新キャラや新しい聖遺物セットは随時追加しています。</dd></dl></div>
+    <summary><span data-uko-lang="ja">このサイトについて</span><span data-uko-lang="en" hidden>About this site</span></summary>
+    <div class="uko-about-body" data-uko-lang="ja"><h2>これいる聖遺物とは</h2><p>「この聖遺物、残す？分解する？」を判断するための原神ツールです。聖遺物セットと部位（時計・杯・冠）のメインステータスを選ぶと、その聖遺物を使うキャラクターが一覧で表示されます。厳選や整理のときに、必要な聖遺物をうっかり分解してしまうのを防げます。</p><h2>使い方</h2><ol><li>「聖遺物」タブで、手持ちの聖遺物のセットを選びます。</li><li>時計・杯・冠の場合は、メインステータス（攻撃力%・元素熟知・会心率など）で絞り込みます。</li><li>表示されたキャラがいれば「いる」、誰も出なければ分解や強化素材にしてOK、の目安になります。</li></ol><p>「キャラ」タブでは、キャラごとのおすすめ聖遺物セット、時計・杯・冠のメインステータス、優先したいサブステータスを確認できます。</p><h2>よくある質問</h2><dl><dt>Q. 「妥協聖遺物も含む」とは？</dt><dd>A. 最適ではないけれど代わりに使える聖遺物セットも、表示に含めます。オフにすると、一番おすすめのセットだけが表示されます。</dd><dt>Q. 新キャラには対応している？</dt><dd>A. 新キャラや新しい聖遺物セットは随時追加しています。</dd></dl></div>
+    <div class="uko-about-body" data-uko-lang="en" lang="en" hidden><h2>What is Artifact Check?</h2><p>A Genshin Impact tool that helps you decide whether to keep or discard an artifact. Choose an artifact set and the main stat of the Sands, Goblet or Circlet, and it lists the characters who use that artifact. It helps you avoid accidentally throwing away artifacts you need when farming or cleaning up your inventory. (Japanese only)</p><h2>How to use</h2><ol><li>In the "Artifacts" tab, choose the set of the artifact you have.</li><li>For Sands, Goblets and Circlets, filter by main stat (ATK%, Elemental Mastery, CRIT Rate, etc.).</li><li>If any characters are shown, keep it. If nobody shows up, it is probably fine to discard it or use it as enhancement material.</li></ol><p>In the "Characters" tab, you can check each character's recommended artifact sets, the main stats for Sands, Goblet and Circlet, and which substats to prioritize.</p><h2>FAQ</h2><dl><dt>Q. What does "Include compromise artifacts" mean?</dt><dd>A. It also shows artifact sets that are not the best but can be used as substitutes. When it is off, only the most recommended sets are shown.</dd><dt>Q. Are new characters supported?</dt><dd>A. New characters and new artifact sets are added as they come out.</dd></dl></div>
   </details>
+  <script>
+  (function(){
+    // 説明文の日英切り替え。言語ラジオがあるサイトはその選択、ないサイトは共通のlocalStorage('lang')に合わせる
+    var box=document.currentScript.previousElementSibling;
+    function cur(){
+      var r=document.querySelector('input[name="lang"]:checked');
+      if(r) return r.value==='en'?'en':'ja';
+      try{return localStorage.getItem('lang')==='en'?'en':'ja';}catch(e){return 'ja';}
+    }
+    function apply(){
+      var l=cur();
+      box.querySelectorAll('[data-uko-lang]').forEach(function(n){n.hidden=n.getAttribute('data-uko-lang')!==l;});
+    }
+    apply();
+    document.addEventListener('change',function(e){if(e.target&&e.target.name==='lang')setTimeout(apply,0);});
+    document.addEventListener('DOMContentLoaded',apply);
+    window.addEventListener('load',apply);
+    new MutationObserver(apply).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+  })();
+  </script>
 </body>
 </html>
