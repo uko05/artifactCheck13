@@ -49,7 +49,8 @@ export const characterBuild = {
     },
 
     subStats: [
-      MAIN_STATS.HP_PCT
+      MAIN_STATS.HP_PCT,
+      MAIN_STATS.ER
     ]
   },
   
@@ -70,6 +71,39 @@ export const characterBuild = {
       sands: MAIN_STATS.ATK_PCT,
       goblet: MAIN_STATS.ATK_PCT,
       circlet: MAIN_STATS.CRIT_DMG
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "アリョーシャ": {
+    icon: "アリョーシャ.png",
+    Element: "雷",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "noblesse", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "Heart_of_the_Furnace", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ER,
+      goblet: MAIN_STATS.ER,
+      circlet: MAIN_STATS.ER
     },
 
     subStats: [
@@ -192,12 +226,6 @@ export const characterBuild = {
         rank: 1,
         sets: [
           { id: "aubade_of_morningstar_and_moon", count: 4 }
-        ]
-      },
-      {
-        rank: 2,
-        sets: [
-          { id: "husk", count: 4 }
         ]
       }
     ],
@@ -342,7 +370,7 @@ export const characterBuild = {
       {
         rank: 2,
         sets: [
-          { id: "emblem", count: 4 }
+          { id: "A_Day_Carved_From_Rising_Winds", count: 4 }
         ]
       }
     ],
