@@ -719,13 +719,13 @@ export const characterBuild = {
       {
         rank: 1,
         sets: [
-          { id: "viridescent", count: 4 }
+          { id: "Scarlet_Proof", count: 4 }
         ]
       },
       {
         rank: 2,
         sets: [
-          { id: "Scarlet_Proof", count: 4 }
+          { id: "viridescent", count: 4 }
         ]
       }
     ],
@@ -733,7 +733,7 @@ export const characterBuild = {
     mainStats: {
       sands: MAIN_STATS.EM,
       goblet: MAIN_STATS.EM,
-      circlet: MAIN_STATS.EM
+      circlet: MAIN_STATS.CRIT_RATE
     },
 
     subStats: [
