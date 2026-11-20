@@ -2,6 +2,71 @@ import { MAIN_STATS, PARTS } from "./stats.js";
 
 export const characterBuild = {
 
+  "ミティヤ": {
+    icon: "ミティヤ.png",
+    Element: "雷",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "Disenchantment_in_Deep_Shadow", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "em80", count: 2 },
+          { id: "em80", count: 2 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.EM,
+      goblet: MAIN_STATS.EM,
+      circlet: MAIN_STATS.CRIT
+    },
+
+    subStats: [
+      MAIN_STATS.CRIT_RATE,
+      MAIN_STATS.CRIT_DMG,
+      MAIN_STATS.EM,
+      MAIN_STATS.ER
+    ]
+  },
+  
+  "バレリー": {
+    icon: "バレリー.png",
+    Element: "雷",
+
+    recommendedSets: [
+      {
+        rank: 1,
+        sets: [
+          { id: "Heart_of_the_Furnace", count: 4 }
+        ]
+      },
+      {
+        rank: 2,
+        sets: [
+          { id: "noblesse", count: 4 }
+        ]
+      }
+    ],
+
+    mainStats: {
+      sands: MAIN_STATS.ATK_PCT,
+      goblet: MAIN_STATS.ATK_PCT,
+      circlet: MAIN_STATS.ATK_PCT
+    },
+
+    subStats: [
+      MAIN_STATS.ATK_PCT,
+      MAIN_STATS.ER
+    ]
+  },
+  
   "ヴェスナ": {
     icon: "ヴェスナ.png",
     Element: "風",

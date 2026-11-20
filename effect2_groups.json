@@ -24,6 +24,7 @@
     "id": "em80",
     "name": "熟知+80",
     "setIds": [
+      "Night_of_the_Sky_Unveiling",
       "paradise_lost",
       "gilded_dreams",
       "wanderers_troupe",
@@ -34,6 +35,7 @@
     "id": "er20",
     "name": "チャージ効率+20%",
     "setIds": [
+      "Celestial_Gift",
       "emblem",
       "Silken_Moon_Serenade"
     ]
@@ -50,6 +52,10 @@
     "id": "atk18",
     "name": "攻撃+18%",
     "setIds": [
+      "Heart_of_the_Furnace",
+      "Scarlet_Proof",
+      "A_Day_Carved_From_Rising_Winds",
+      "Disenchantment_in_Deep_Shadow",
       "harmonic_whimsy",
       "nighttime_whispers",
       "unfinished_reverie",
@@ -173,6 +179,7 @@
     "id": "cryo15",
     "name": "氷元素+15%",
     "setIds": [
+      "Finale_of_the_Deep_Galleries",
       "blizzard_strayer"
     ]
   }
